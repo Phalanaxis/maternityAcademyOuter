@@ -104,6 +104,14 @@
     background-color: #ECE7E1;
     padding: 72px 140px 40px 140px;
 
+    @media screen and (max-width: 1280px) {
+      padding: 60px 70px;
+    }
+
+    @media screen and (max-width: 680px) {
+      padding: 60px 30px;
+    }
+
     &__top {
       display: flex;
       justify-content: space-between;
@@ -247,6 +255,15 @@
       background-color: #FEF8F2;
       border-radius: 50px;
       cursor: pointer;
+
+      @media screen and (max-width: 1280px) {
+        top: 60px;
+        right: 70px;
+      }
+
+      @media screen and (max-width: 680px) {
+        right: 30px;
+      }
     }
 
     &__arrow-icon {
