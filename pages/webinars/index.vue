@@ -1,9 +1,9 @@
 <template>
   <div class="page__container">
-    <Blocks-about-intro />
-    <Blocks-about-science-works />
-    <blocks-about-directions />
-    <blocks-about-education />
+    <Blocks-webinars-intro />
+    <blocks-webinars-list />
+    <Blocks-webinars-science-works />
+    <blocks-webinars-education />
     <blocks-message-us />
   </div>
 </template>
@@ -28,7 +28,7 @@
     }
 
     @media screen and (max-width: 400px) {
-      padding: 0 0 60px 0;
+      padding: 0 30px 60px 30px;
     }
   }
 }
