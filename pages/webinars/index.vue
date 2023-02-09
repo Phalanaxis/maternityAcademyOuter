@@ -2,8 +2,6 @@
   <div class="page__container">
     <Blocks-webinars-intro />
     <blocks-webinars-list />
-    <Blocks-webinars-science-works />
-    <blocks-webinars-education />
     <blocks-message-us />
   </div>
 </template>
