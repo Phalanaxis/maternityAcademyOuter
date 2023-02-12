@@ -52,7 +52,7 @@
 <script>
   // import Swiper core and required modules
   import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-  import {useSwiperArticlesStore} from '~/stores/swiperArticlesStore';
+  import {useSwiperArticlesStore} from '~~/stores/articles/swiperArticlesStore';
 
   // Import Swiper Vue.js components
   import  { Swiper, SwiperSlide } from 'swiper/vue';

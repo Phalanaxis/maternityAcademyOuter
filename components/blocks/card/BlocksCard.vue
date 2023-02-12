@@ -20,7 +20,7 @@
       <h2>{{ item.heading }}</h2>
       <p class="title-card">{{ item.title }}</p>
       <button @click="dataPopup.setIsOpen" @click.native="indexForPopup = index" class="details">Подробнее</button>
-      <elements-button-green :content="item.btnText" />
+      <elements-button-green :isLink="true">{{ item.btnText }}</elements-button-green>
       <!-- <p>Бесплатно при покупке любого пакета «Школы <a>беременности»</a> </p> -->
     </div>
   </div>

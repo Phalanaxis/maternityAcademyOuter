@@ -1,5 +1,5 @@
 <script setup>
-  import { useWebinarsStore } from '@/stores/webinarsStore'
+  import { useWebinarsStore } from '~~/stores/articles/webinarsStore'
   const webinars = useWebinarsStore()
 </script>
 <template>
