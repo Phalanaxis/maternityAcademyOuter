@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useArticlesStore = defineStore('articlesStore', {
   state: () => ({
+    isFullShow: false,
     dataCard: [
       {
         folder: 'articles',
@@ -126,25 +127,40 @@ export const useArticlesStore = defineStore('articlesStore', {
         imgIndex: 13
       },
       {
-        heading: 'Нестыдный вопрос: можно ли делать глубокое бикини беременным?',
-        decription: 'Разрушение мифов об интимной эпиляции во время беременности',
-        imgIndex: 9
+        heading: 'Как первый секс у девушек связан с риском инфицирования ВИЧ?',
+        decription: 'О взаимосвязи ранней половой жизни и ВИЧ',
+        imgIndex: 14
       },
       {
-        heading: 'Нестыдный вопрос: можно ли делать глубокое бикини беременным?',
-        decription: 'Разрушение мифов об интимной эпиляции во время беременности',
-        imgIndex: 9
+        heading: 'Остановка в пути: в каких случаях нужна стимуляция родов',
+        decription: 'О механизме и способах стимуляции родового процесса, а также о том, когда вмешательства оправданы',
+        imgIndex: 15
       },
       {
-        heading: 'Нестыдный вопрос: можно ли делать глубокое бикини беременным?',
-        decription: 'Разрушение мифов об интимной эпиляции во время беременности',
-        imgIndex: 9
+        heading: 'Аптечка беременяшки',
+        decription: 'О том, какие лекарства безопасны для беременных и что необходимо держать в аптечке, находясь в положении',
+        imgIndex: 16
       },
       {
-        heading: 'Нестыдный вопрос: можно ли делать глубокое бикини беременным?',
-        decription: 'Разрушение мифов об интимной эпиляции во время беременности',
-        imgIndex: 9
+        heading: 'После 40 секс только начинается: что такое сексуальное здоровье и 10 неочевидных факторов, которые на него влияют',
+        decription: '',
+        imgIndex: 17
       }
     ]
   }),
+  getters: {
+    geDataCardMedia() {
+      if (!this.isFullShow) {
+        return this.dataCardMedia.filter((el, i) => i < 4)
+      } else {
+        return this.dataCardMedia
+      }
+
+    }
+  },
+  actions: {
+    setIsFullShow() {
+      this.isFullShow = !this.isFullShow
+    }
+  }
 })

@@ -1,16 +1,22 @@
+<script setup>
+import {useArticlesStore} from '~/stores/articlesStore';
+const store = useArticlesStore()
+</script>
 <template>
   <h2>Статьи в СМИ</h2>
   <div class="wrapper-card">
-    <div class="card">
-      <div class="img"></div>
-      <h3 class="heading-card">Женская сексуальность после 40 лет: привычки, которые помогут вам повысить либидо</h3>
-      <p class="title-card">О том, какие правила необходимо соблюдать после 40 лет, чтобы держать себя в тонусе</p>
-      <elements-read-articles />
+    <div v-for="item in store.geDataCardMedia" class="card">
+      <img :src="`/_nuxt/assets/images/articles/imgMedia/${item.imgIndex}.png`" />
+      <h3 class="heading-card">{{ item.heading }}</h3>
+      <p class="title-card">{{ item.decription }}</p>
+      <elements-read-articles class="btnRead" />
     </div>
   </div>
+  <elements-button-green class="btnFull" :isLink="false" @click.native="store.setIsFullShow">
+    <template v-if="store.isFullShow">Скрыть</template>
+    <template v-if="!store.isFullShow">Показать все</template>
+  </elements-button-green>
 </template>
-<script setup>
-</script>
 <style lang="scss" scoped>
   h2 {
     font-family: Oswald;
@@ -43,14 +49,26 @@
 
     .card {
       padding: 30px;
+      padding-bottom: 52px;
       max-width: 560px;
       width: 100%;  
       background: rgba(236, 231, 225, 1);
       border-radius: 15px;
       height: 340px;
+      position: relative;
 
       @media screen and (max-width: 1280px) {
         width: auto;
+      }
+
+      @media screen and (max-width: 680px) {
+        height: auto;
+        padding-right: 16px;
+      }
+
+      .btnRead {
+        position: absolute;
+        bottom: 30px;
       }
 
       .img {
@@ -68,8 +86,8 @@
         margin-bottom: 15px;
 
         @media screen and (max-width: 680px) {
-          font-size: 28px;
-          line-height: 36px;
+          font-size: 22px;
+          line-height: 28px;
         }
       }
 
@@ -78,6 +96,11 @@
         line-height: 24px;
         color: rgba(35, 35, 35, 1);
         margin-bottom: 30px;
+
+        @media screen and (max-width: 680px) {
+          font-size: 15px;
+          line-height: 22px;
+        }
       }
     }
   }

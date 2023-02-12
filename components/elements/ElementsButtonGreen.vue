@@ -1,16 +1,17 @@
 <template>
-  <a :href="link" class="button-primary">{{ content }}</a>
+  <a v-if="isLink" :href="link" class="button-primary"><slot></slot></a>
+  <div v-else :href="link" class="button-primary"><slot></slot></div>
 </template>
 <script>
   export default {
     props: {
-      content: {
-        type: String,
-        default: ''
-      },
       link: {
         type: String,
         default: '#'
+      },
+      isLink: {
+        type: Boolean,
+        default: 'true'
       }
     }
   }
@@ -22,10 +23,18 @@
   color: white;
   background: rgba(6, 72, 72, 1);
   font-size: 18px;
+  cursor: pointer;
 
   @media screen and (max-width: 680px) {
     font-size: 16px;
     padding: 17px 40px;
   }
+}
+
+.btnFull {
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  margin: 30px auto 0;
 }
 </style>
