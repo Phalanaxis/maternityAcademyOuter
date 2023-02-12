@@ -1,8 +1,9 @@
 <template>
   <div class="page__container">
     <h1>Полезные материалы и статьи</h1>
-    <!-- <blocks-articles-cards :data="data.dataCard"/>  -->
+    <blocks-articles-cards :data="data.dataCard"/> 
     <blocks-media-articles />
+    <blocks-slider-articles />
   </div>
 </template>
 <script setup>
