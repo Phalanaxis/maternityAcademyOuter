@@ -1,13 +1,14 @@
 <template>
   <div class="page__container">
-    <h1>Полезные материалы и статьи</h1>
-    <blocks-articles-cards :data="data.dataCard"/> 
-    <blocks-media-articles />
-    <blocks-slider-articles />
+    <!-- <h1>Полезные материалы и статьи</h1> -->
+    <!-- <blocks-articles-cards :data="data.dataCard"/>  -->
+    <!-- <blocks-media-articles /> -->
+    <!-- <blocks-slider-articles /> -->
+    <blocks-useful-articles />
   </div>
 </template>
 <script setup>
-  import {useArticlesStore} from '~~/stores/articlesStore'
+  import {useArticlesStore} from '~~/stores/articles/articlesStore'
 
   const data = useArticlesStore();
 </script>
@@ -23,7 +24,7 @@
      padding: 0 40px 150px 40px;
 
     @media screen and (max-width: 1280px) {
-      max-width: 680px;
+      max-width: 720px;
     }
 
     @media screen and (max-width: 680px) {
