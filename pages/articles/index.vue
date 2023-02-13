@@ -1,16 +1,19 @@
 <template>
   <div class="page__container">
     <h1>Полезные материалы и статьи</h1>
-    <blocks-articles-cards :data="data.dataCard"/> 
-    <blocks-media-articles />
-    <blocks-slider-articles />
+      <blocks-articles-cards :data="data.dataCard"/> 
+      <blocks-media-articles />
+      <blocks-slider-articles />
     <blocks-useful-articles />
+    {{ store.point }}
   </div>
 </template>
 <script setup>
   import {useArticlesStore} from '~~/stores/articles/articlesStore'
+  import {useUsefulStore} from '~~/stores/articles/usefulStore'
 
-  const data = useArticlesStore();
+  const store = useUsefulStore();
+  const data = useArticlesStore();  
 </script>
 <style lang="scss" scoped>
 .page {

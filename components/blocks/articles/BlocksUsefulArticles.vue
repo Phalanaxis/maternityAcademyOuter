@@ -1,18 +1,32 @@
-<script setup>
-  import {useUsefulStore} from '~~/stores/articles/usefulStore';
-  const store = useUsefulStore();
-</script>
 <template>
   <h2 class="heading">Полезные статьи</h2>
   <div class="wrapper">
-    <div v-for="item in store.dataUseful" class="cardArticles">
+    <div v-for="(item, index) in store.dataUseful" class="cardArticles">
       <img :src="`/_nuxt/assets/images/articles/imgUseful/${item.img}.png`"/>
       <h2>{{ item.heading }}</h2>
       <p>{{ item.title }}</p>
-      <a :href="item.href">Читать статью</a>
+      <a @click.prevent="goTo(item.heading, index)" :href="item.href">Читать статью</a>
     </div>
   </div>
 </template>
+<script>
+  import {useUsefulStore} from '~~/stores/articles/usefulStore';
+  export default {
+    setup() {
+      const store = useUsefulStore();
+
+      return {
+        store
+      }
+    },
+    methods: {
+      goTo(str, index) {
+        this.store.setIndex(index)
+        this.$router.push('/articles/' + str)
+      }
+    }
+  }
+</script>
 <style scoped lang="scss">
   .heading {
     margin-top: 150px;
