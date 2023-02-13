@@ -1,5 +1,5 @@
 <script setup>
-import {useArticlesStore} from '~/stores/articlesStore';
+import {useArticlesStore} from '~~/stores/articles/articlesStore';
 const store = useArticlesStore()
 </script>
 <template>
@@ -9,7 +9,7 @@ const store = useArticlesStore()
       <img :src="`/_nuxt/assets/images/articles/imgMedia/${item.imgIndex}.png`" />
       <h3 class="heading-card">{{ item.heading }}</h3>
       <p class="title-card">{{ item.decription }}</p>
-      <elements-read-articles class="btnRead" />
+      <elements-read-articles :href="item.href" class="btnRead" />
     </div>
   </div>
   <elements-button-green class="btnFull" :isLink="false" @click.native="store.setIsFullShow">
