@@ -33,7 +33,7 @@
         <p class="year">{{ item.years }}</p>
         <h2>{{ item.heading }}</h2>
         <p class="title">{{ item.authors }}</p>
-        <elements-read-articles class="btnRead" />
+        <elements-read-articles :href="item.href" class="btnRead" />
       </div>
     </swiper-slide>
 </swiper>
