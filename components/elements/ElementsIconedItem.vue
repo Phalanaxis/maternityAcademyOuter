@@ -74,6 +74,7 @@ import union from '@/components/svg/union.vue'
       color: #232323;
       margin: 20px 0 0 0;
       max-width: 90%;
+      font-weight: 400;
 
       @media screen and (max-width: 680px) {
         margin: 0 0 0 20px;

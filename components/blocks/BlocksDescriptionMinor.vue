@@ -3,20 +3,14 @@
     <div class="main-description__main-block">
       <div class="main-description__left-column">
         <div class="main-description__position">
-          ОСНОВАТЕЛЬНИЦА АКАДЕМИИ
+          {{ label }}
         </div>
         <h2 class="main-description__title">
-          Элисо Джобава — врач-акушер высшей категории, профессор, доктор медицинских наук
+          {{ title }}
         </h2>
         <ul class="main-description__list">
-          <li class="main-description__list-item">
-            Международный эксперт по ведению осложнённой беременности
-          </li>
-          <li class="main-description__list-item">
-            Специалист по невынашиванию беременности, патологии системы гемостаза и тромбофилиям
-          </li>
-          <li class="main-description__list-item">
-            Специалист по подготовке и ведению «зрелой» беременности (35+)
+          <li v-for="item in listItems" class="main-description__list-item">
+            {{ item }}
           </li>
         </ul>
         <div class="main-description__button-container">
@@ -36,10 +30,33 @@
   </div>
 </template>
 
+<script>
+
+  export default {
+    props: {
+      label: {
+        type: String,
+        default: 'ОСНОВАТЕЛЬНИЦА АКАДЕМИИ'
+      },
+      title: {
+        type: String,
+        default: 'Элисо Джобава — врач-акушер высшей категории, профессор, доктор медицинских наук'
+      },
+      listItems: {
+        type: Array,
+        default: () => [
+          'Международный эксперт по ведению осложнённой беременности',
+          'Специалист по невынашиванию беременности, патологии системы гемостаза и тромбофилиям',
+          'Специалист по подготовке и ведению «зрелой» беременности (35+)'
+        ]
+      }
+    }
+  }
+</script>
+
 <style lang="scss" scoped>
 .main-description {
   padding: 120px 0;
-  max-width: 1160px;
 
   &__main-block {
     display: flex;
