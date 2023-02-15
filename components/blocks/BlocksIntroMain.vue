@@ -28,6 +28,7 @@
     </nuxt-link>
   </div>
 </template>
+
 <style lang="scss" scoped>
   .intro-block {
 

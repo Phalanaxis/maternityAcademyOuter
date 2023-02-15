@@ -4,102 +4,24 @@
       Форматы работы
     </h1>
     <div class="work-format__list">
-      <div
-        class="work-format__item"
-      >
-        <img class="work-format__item-image" src="@/assets/images/workFormatHovers/1.png" />
-        <div>
-          <h3 class="work-format__item-title">
-            Вебинары
-          </h3>
-          <div class="work-format__item-text">
-            Структурированные материалы, которые дадут максимум информации по важным вопросам
-          </div>
-        </div>
-        <div class="work-format__item-link">
-          Подробнее
-          <svg-arrow-right class="work-format__item-arrow" />
-        </div>
-      </div>
-      <div
-          class="work-format__item"
-      >
-        <img class="work-format__item-image work-format__item-image_top" src="@/assets/images/workFormatHovers/2.png" />
-        <div>
-          <h3 class="work-format__item-title">
-            Школа беременных и мам
-          </h3>
-          <div class="work-format__item-text">
-            Всё, что нужно знать о материнстве, подготовке, сложностях процесса и многом другом
-          </div>
-        </div>
-        <div class="work-format__item-link">
-          Подробнее
-          <svg-arrow-right class="work-format__item-arrow" />
-        </div>
-      </div>
-      <div
-          class="work-format__item"
-      >
-        <img class="work-format__item-image" src="@/assets/images/workFormatHovers/3.png" />
-        <div>
-          <h3 class="work-format__item-title">
-            Гайды и методички
-          </h3>
-          <div class="work-format__item-text">
-            Небольшие и полезные сборники с прикладными советами
-          </div>
-        </div>
-        <div class="work-format__item-link">
-          Подробнее
-          <svg-arrow-right class="work-format__item-arrow" />
-        </div>
-      </div>
-      <div
-          class="work-format__item"
-      >
-        <img class="work-format__item-image" src="@/assets/images/workFormatHovers/4.png" />
-        <div>
-          <h3 class="work-format__item-title">
-            Персонализированные проекты
-          </h3>
-          <div class="work-format__item-text">
-            Индивидуально разработанные программы по восстановлению женского здоровья
-          </div>
-        </div>
-        <div class="work-format__item-link">
-          Подробнее
-          <svg-arrow-right class="work-format__item-arrow" />
-        </div>
-      </div>
-      <div
-          class="work-format__item"
-      >
-        <img class="work-format__item-image work-format__item-image_top" src="@/assets/images/workFormatHovers/5.png" />
-        <div>
-          <h3 class="work-format__item-title">
-            Специалистам и медработникам
-          </h3>
-          <div class="work-format__item-text">
-            Обучающие продукты, позволяющие перенять опыт и знания специалиста международного уровня
-          </div>
-        </div>
-        <div class="work-format__item-link">
-          Подробнее
-          <svg-arrow-right class="work-format__item-arrow" />
-        </div>
-      </div>
       <router-link
         class="work-format__item"
-        to="/consultations"
+        :to="item.link"
+        v-for="(item, index) in tabs"
       >
-        <img class="work-format__item-image" src="@/assets/images/workFormatHovers/6.png" />
+        <img
+          :class="{
+            'work-format__item-image': true,
+            'work-format__item-image_top': index === 1 || index === 4
+          }"
+          :src="`_nuxt/static/images/workFormatHovers/${item.image}.png`"
+        />
         <div>
           <h3 class="work-format__item-title">
-            Консультации
+            {{ item.title }}
           </h3>
           <div class="work-format__item-text">
-            Очная или онлайн работа со специалистом
+            {{ item.text }}
           </div>
         </div>
         <div class="work-format__item-link">
@@ -125,6 +47,57 @@
     </div>
   </div>
 </template>
+
+<script>
+const tabs = [
+  {
+    title: 'Вебинары',
+    text: 'Структурированные материалы, которые дадут максимум информации по важным вопросам',
+    image: '1',
+    link: '/webinars'
+  },
+  {
+    title: 'Школа беременных и мам',
+    text: 'Всё, что нужно знать о материнстве, подготовке, сложностях процесса и многом другом',
+    image: '2',
+    link: '/school'
+  },
+  {
+    title: 'Гайды и методички',
+    text: 'Небольшие и полезные сборники с прикладными советами',
+    image: '3',
+    link: '/guides'
+  },
+  {
+    title: 'Персонализированные проекты',
+    text: 'Индивидуально разработанные программы по восстановлению женского здоровья',
+    image: '4',
+    link: '/projects'
+  },
+  {
+    title: 'Специалистам и медработникам',
+    text: 'Обучающие продукты, позволяющие перенять опыт и знания специалиста международного уровня',
+    image: '5',
+    link: '/forMedWorkers'
+  },
+  {
+    title: 'Консультации',
+    text: 'Очная или онлайн работа со специалистом',
+    image: '6',
+    link: '/consultations'
+  }
+]
+
+  export default {
+
+    setup () {
+
+      return {
+        tabs
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
   .work-format {
@@ -334,6 +307,3 @@
     }
   }
 </style>
-<script setup lang="ts">
-import SvgPlusIcon from "~/components/svg/SvgPlusIcon.vue";
-</script>

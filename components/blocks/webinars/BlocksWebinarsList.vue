@@ -1,7 +1,8 @@
 <script setup>
-  import { useWebinarsStore } from '~~/stores/articles/webinarsStore'
+  import { useWebinarsStore } from '@/stores/webinarsStore'
   const webinars = useWebinarsStore()
 </script>
+
 <template>
   <div @click.self="isOpenPopup = false" class="overlay__popup-webinars" :class="{active: isOpenPopup}">
     <div class="popup">
@@ -63,6 +64,7 @@
     </div>
   </div>
 </template>
+
 <script> 
   export default {
     data() {
@@ -119,6 +121,7 @@
     align-items: flex-start;
     justify-content: center;
     overflow-y: scroll;
+    pointer-events: none;
 
     @media screen and (max-width: 680px) {
       padding: 60px 20px 60px 30px;
