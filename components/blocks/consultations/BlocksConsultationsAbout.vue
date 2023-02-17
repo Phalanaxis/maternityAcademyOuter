@@ -29,19 +29,13 @@
 
 <style lang="scss" scoped>
 .consultations-about {
-  padding: 120px 0;
-  //max-width: 1160px;
   display: flex;
   flex-direction: column;
-
-  @media screen and (max-width: 1280px) {
-    max-width: 680px;
-  }
 
   &__main-block {
     display: flex;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       flex-direction: column;
     }
   }
@@ -50,7 +44,7 @@
     max-width: 55%;
     margin: 0 80px 0 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       max-width: 100%;
       margin: 50px 0 0 0;
     }
@@ -60,7 +54,7 @@
     position: relative;
     max-width: calc(45% - 80px);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       order: -1;
       max-width: 50%;
     }
@@ -84,7 +78,7 @@
     line-height: 130%;
     margin: 20px 0 0 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       font-size: 30px;
     }
 
@@ -138,7 +132,7 @@
     top: 0;
     transform: rotate(50deg);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       transform: rotate(50deg) scale(0.7);
       left: -60px;
     }
@@ -156,7 +150,7 @@
     bottom: 15%;
     transform: scale(2);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       transform: scale(1);
     }
 

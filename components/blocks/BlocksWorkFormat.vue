@@ -38,12 +38,10 @@
       <h3 class="work-format__message-us-title">
         Не получается определиться с выбором?
         Напишите нам — мы поможем
-        <div class="work-format__message-us-button-container">
-          <div class="work-format__message-us-button">
-            Написать в Telegram
-          </div>
-        </div>
       </h3>
+      <div class="work-format__message-us-button-container">
+        <elements-buttons-secondary title="Написать в Telegram" />
+      </div>
     </div>
   </div>
 </template>
@@ -115,7 +113,7 @@ const tabs = [
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 40px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
         grid-gap: 20px;
       }
@@ -125,7 +123,6 @@ const tabs = [
       position: relative;
       background-color: #839389;
       border-radius: 15px;
-      padding: 40px;
       height: 360px;
       transition: background-color .2s;
       cursor: pointer;
@@ -133,12 +130,14 @@ const tabs = [
       flex-direction: column;
       justify-content: space-between;
       text-decoration: none;
+      padding: 40px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         height: 280px;
       }
 
       @media screen and (max-width: 680px) {
+        padding: 30px;
         height: 380px;
       }
 
@@ -156,12 +155,21 @@ const tabs = [
       color: #FEF8F2;
       margin: 0 0 20px 0;
       max-width: 75%;
+
+      @media screen and (max-width: 680px) {
+        max-width: 100%;
+        font-size: 20px;
+      }
     }
 
     &__item-text {
       color: #FEF8F2;
       font-size: 16px;
       line-height: 24px;
+
+      @media screen and (max-width: 680px) {
+        font-size: 15px;
+      }
     }
 
     &__item-image {
@@ -171,7 +179,7 @@ const tabs = [
       opacity: 0;
       transition: opacity .2s;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         bottom: unset;
         top: -40px;
       }
@@ -198,19 +206,20 @@ const tabs = [
 
     &__message-us-block {
       position: relative;
-      margin: 50px 0 0 0;
       padding: 80px 0;
+      margin: 50px 0 0 0;
       background: #C5B1B2;
       border-radius: 15px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         padding: 60px 40px;
       }
 
       @media screen and (max-width: 680px) {
-        padding: 60px 45px;
+        padding: 60px 30px;
       }
     }
 
@@ -225,7 +234,6 @@ const tabs = [
     &__message-us-button-container {
       display: flex;
       justify-content: center;
-      margin: 40px 0 0 0;
     }
 
     &__message-us-button {
@@ -249,13 +257,13 @@ const tabs = [
       top: -5px;
       transform: scale(1.4) rotate(120deg);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: unset;
         bottom: 100px;
         right: -40px;
       }
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         bottom: unset;
         top: -30px;
         right: unset;
@@ -271,13 +279,13 @@ const tabs = [
       top: 70px;
       transform: rotate(45deg);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: unset;
         right: 40px;
         bottom: 30px;
       }
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         bottom: unset;
         top: -30px;
       }
@@ -290,7 +298,7 @@ const tabs = [
       left: 140px;
       top: 50%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -301,7 +309,7 @@ const tabs = [
       left: 100px;
       top: 65%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }

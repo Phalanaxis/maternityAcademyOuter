@@ -82,12 +82,19 @@ const tabsList = [
 <style lang="scss" scoped>
   .about-directions {
     width: 100%;
-    margin: 150px 0 0 0;
 
     &__title {
       margin: 0;
       color: #644C5C;
       font-size: 38px;
+
+      @media screen and (max-width: 1200px) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 30px;
+      }
     }
 
     &__list {
@@ -96,7 +103,7 @@ const tabsList = [
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 40px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr 1fr;
       }
 

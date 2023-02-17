@@ -1,14 +1,12 @@
 <template>
   <div class="main-swiper">
-    <svg-heart-icon class="main-swiper__heart" />
-    <svg-star class="main-swiper__star" />
     <h1 class="main-swiper__title">
       Эксперты Школы беременности
     </h1>
     <div class="main-swiper__swiper-block">
       <swiper
         :space-between="40"
-        :breakpoints="{ 1280:{ slidesPerView: 4}, 680:{ slidesPerView: 2 }, 0:{ slidesPerView: 1 } }"
+        :breakpoints="{ 1200:{ slidesPerView: 4}, 680:{ slidesPerView: 2 }, 0:{ slidesPerView: 1 } }"
       >
         <swiper-slide v-for="item in slidesArray">
           <elements-main-swiper-item
@@ -22,17 +20,14 @@
       </swiper>
     </div>
   </div>
-  <div v-if="isModalOpened" class="main-swiper__modal">
-    <div class="main-swiper__modal-window">
-      <div class="main-swiper__close-cross-button" @click="switchModal" />
-      <h3 class="main-swiper__modal-title">
-        {{ modalInfo?.title }}
-      </h3>
-      <ul class="main-swiper__modal-list">
-        <li class="main-swiper__modal-item" v-for="item in modalInfo.items" v-html="item" />
-      </ul>
-    </div>
-  </div>
+  <elements-modals-keeper :is-modal-opened="isModalOpened" @close="switchModal">
+    <h3 class="main-swiper__modal-title">
+      {{ modalInfo?.title }}
+    </h3>
+    <ul class="main-swiper__modal-list">
+      <li class="main-swiper__modal-item" v-for="item in modalInfo.items" v-html="item" />
+    </ul>
+  </elements-modals-keeper>
 </template>
 
 <script>
@@ -217,7 +212,7 @@ export default {
   margin: 150px 0 0 0;
   position: relative;
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1200px) {
     margin: 100px 0 0 0;
   }
 
@@ -226,6 +221,14 @@ export default {
     font-size: 38px;
     text-align: left;
     margin: 0 0 30px 0;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 36px;
+    }
+
+    @media screen and (max-width: 680px) {
+      font-size: 30px;
+    }
   }
 
   &__text {
@@ -234,36 +237,13 @@ export default {
     font-size: 16px;
     line-height: 24px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       max-width: 100%;
     }
   }
 
   &__swiper-block {
     margin: 40px 0 0 0;
-  }
-
-  &__heart {
-    position: absolute;
-    fill: #78353E;
-    transform: rotate(50deg);
-    top: 30px;
-    right: 60px;
-
-    @media screen and (max-width: 1280px) {
-      display: none;
-    }
-  }
-
-  &__star {
-    position: absolute;
-    fill: #644C5C;
-    top: 120px;
-    right: 10px;
-
-    @media screen and (max-width: 1280px) {
-      display: none;
-    }
   }
 
   &__modal {
@@ -277,41 +257,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  &__modal-window {
-    width: 760px;
-    padding: 60px;
-    background-color: #ECE7E1;
-    position: relative;
-  }
-
-  &__close-cross-button {
-    position: absolute;
-    top: 23px;
-    right: 23px;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-
-    &:after,
-    &:before {
-      position: absolute;
-      top: 15px;
-      width: 25px;
-      height: 1px;
-      background-color: #000;
-      content: '';
-      transform-origin: center;
-    }
-
-    &:after {
-      transform: rotate(45deg);
-    }
-
-    &:before {
-      transform: rotate(-45deg);
-    }
   }
 
   &__modal-title {

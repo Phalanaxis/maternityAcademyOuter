@@ -8,9 +8,7 @@
         Элисо Джобава — врач-акушер высшей категории, профессор, доктор медицинских наук
       </h2>
       <div class="about-intro__button-container">
-        <div class="about-intro__button" @click="openFancyBox">
-          Посмотреть дипломы
-        </div>
+        <elements-buttons-secondary title="Посмотреть дипломы" @click="openFancyBox" />
       </div>
     </div>
     <div class="about-intro__right-column">
@@ -52,11 +50,10 @@ import '@fancyapps/ui/dist/fancybox.css'
     padding: 60px 150px 60px 60px;
     background: #644C5C;
     border-radius: 15px;
-    margin: 90px 0 0 0;
     display: flex;
     justify-content: space-between;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       padding: 60px;
       flex-direction: column;
     }
@@ -68,7 +65,7 @@ import '@fancyapps/ui/dist/fancybox.css'
     &__left-column {
       max-width: 45%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
         margin: 50px 0 0 0;
       }
@@ -80,7 +77,7 @@ import '@fancyapps/ui/dist/fancybox.css'
       display: flex;
       align-items: center;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         order: -1;
         width: 100%;
         justify-content: center;
@@ -89,6 +86,7 @@ import '@fancyapps/ui/dist/fancybox.css'
 
     &__image {
       max-width: 300px;
+      width: 100%;
       height: 100%;
     }
 
@@ -97,7 +95,7 @@ import '@fancyapps/ui/dist/fancybox.css'
       letter-spacing: 0.03em;
       font-size: 14px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         text-align: center;
       }
     }
@@ -105,29 +103,15 @@ import '@fancyapps/ui/dist/fancybox.css'
     &__name {
       color: #FEF8F2;
       font-size: 32px;
-      line-height: 42px;
+      line-height: 130%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         text-align: center;
-      }
-
-      @media screen and (max-width: 680px) {
         font-size: 30px;
       }
-    }
-
-    &__button {
-      color: #644C5C;
-      padding: 18px 45px;
-      background-color: #FEF8F2;
-      border-radius: 5px;
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
 
       @media screen and (max-width: 680px) {
-        font-size: 16px;
+        font-size: 26px;
       }
     }
 
@@ -135,7 +119,7 @@ import '@fancyapps/ui/dist/fancybox.css'
       display: flex;
       margin: 40px 0 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         justify-content: center;
       }
     }
@@ -167,7 +151,7 @@ import '@fancyapps/ui/dist/fancybox.css'
       fill: #FEF8F2;
       transform: scale(0.6);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }

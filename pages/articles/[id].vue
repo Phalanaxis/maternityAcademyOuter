@@ -10,7 +10,7 @@
             </div>
         </div>
         <NuxtLink class="linkToBack" to="/articles">
-            Вернуться в раздел «Полезные статьи» 
+            Вернуться в раздел «Полезные статьи»
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="13" viewBox="0 0 25 13" fill="none">
                 <path d="M25 6.5L-5.68248e-07 13L9.7619 6.5L0 -1.09278e-06L25 6.5Z" fill="#064848"/>
             </svg>
@@ -23,7 +23,7 @@
 </script>
 <style lang="scss">
 
-.containerArticlesDetails {   
+.containerArticlesDetails {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +31,7 @@
     margin: 0 auto;
     padding: 0 40px 150px 40px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
         max-width: 720px;
     }
 
@@ -66,7 +66,7 @@
             margin-bottom: 60px;
             position: relative;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1200px) {
                 font-size: 36px;
             }
 
@@ -112,7 +112,7 @@
             }
         }
     }
-    
+
     .block-author {
         width: 100%;
         display: flex;

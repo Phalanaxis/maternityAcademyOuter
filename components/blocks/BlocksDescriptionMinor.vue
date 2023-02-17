@@ -1,30 +1,30 @@
 <template>
-  <div  class="main-description">
-    <div class="main-description__main-block">
-      <div class="main-description__left-column">
-        <div class="main-description__position">
+  <div  class="minor-description">
+    <div class="minor-description__main-block">
+      <div class="minor-description__left-column">
+        <div class="minor-description__position">
           {{ label }}
         </div>
-        <h2 class="main-description__title">
+        <h2 class="minor-description__title">
           {{ title }}
         </h2>
-        <ul class="main-description__list">
-          <li v-for="item in listItems" class="main-description__list-item">
+        <ul class="minor-description__list">
+          <li v-for="item in listItems" class="minor-description__list-item">
             {{ item }}
           </li>
         </ul>
-        <div class="main-description__button-container">
-          <router-link class="main-description__button" to="/about">
+        <div class="minor-description__button-container">
+          <router-link class="minor-description__button" to="/about">
             Подробнее об Элисо
           </router-link>
         </div>
       </div>
-      <div class="main-description__right-column">
-        <img class="main-description__image" src="@/assets/images/MainPageDescriptionImageMinor.png" alt="" />
-        <svg-half-circle class="main-description__image-circle-figure" />
-        <svg-heart-icon class="main-description__image-heart-figure" />
-        <svg-arrow  class="main-description__image-arrow-figure" />
-        <svg-gex class="main-description__image-gex-figure" />
+      <div class="minor-description__right-column">
+        <img class="minor-description__image" src="@/assets/images/MainPageDescriptionImageMinor.png" alt="" />
+        <svg-half-circle class="minor-description__image-circle-figure" />
+        <svg-heart-icon class="minor-description__image-heart-figure" />
+        <svg-arrow  class="minor-description__image-arrow-figure" />
+        <svg-gex class="minor-description__image-gex-figure" />
       </div>
     </div>
   </div>
@@ -55,13 +55,12 @@
 </script>
 
 <style lang="scss" scoped>
-.main-description {
-  padding: 120px 0;
+.minor-description {
 
   &__main-block {
     display: flex;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       flex-direction: column;
     }
   }
@@ -70,7 +69,7 @@
     max-width: 55%;
     margin: 0 80px 0 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       max-width: 100%;
       margin: 50px 0 0 0;
     }
@@ -80,7 +79,7 @@
     position: relative;
     max-width: calc(45% - 80px);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       order: -1;
       max-width: 50%;
     }
@@ -144,13 +143,14 @@
     right: 40px;
     bottom: 10px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       right: -30%;
     }
 
     @media screen and (max-width: 680px) {
       right: 40px;
       bottom: 80%;
+      transform: scale(2);
     }
   }
 
@@ -161,13 +161,14 @@
     right: 0;
     bottom: 20%;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       bottom: 30%;
       right: -50%;
     }
 
     @media screen and (max-width: 680px) {
       right: 0;
+      transform: scale(0.5);
     }
   }
 
@@ -178,7 +179,7 @@
     left: -50px;
     top: 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       left: unset;
       right: -30px;
     }
@@ -195,7 +196,7 @@
     bottom: 12%;
     transform: scale(1.5);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       right: -65%;
       bottom: 15%;
     }

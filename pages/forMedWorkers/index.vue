@@ -1,42 +1,37 @@
 <template>
-  <div class="med-workers-page">
+  <div class="med-workers-page section-container">
     <blocks-workers-card-list :data="data" @openModal="openModal" />
-    <blocks-description-minor label="Об авторе" :title="descriptionTitle" :list-items="descriptionItems" />
-    <blocks-message-us />
-    <div v-if="isModalOpened" class="med-workers-page__modal">
-      <div class="med-workers-page__modal-window">
-        <div class="med-workers-page__close-cross-button" @click="switchModal" />
-        <div class="med-workers-page__modal-scroll-line">
-          <h3 class="med-workers-page__modal-title">
-            {{ currentModalData?.title }}
-          </h3>
-          <div class="med-workers-page__modal-label">
-            {{ currentModalData?.for }}
+    <blocks-description-minor class="section-block" label="Об авторе" :title="descriptionTitle" :list-items="descriptionItems" />
+    <blocks-message-us class="section-block" />
+    <elements-modals-keeper :is-modal-opened="isModalOpened" @close="switchModal()">
+      <h3 class="med-workers-page__modal-title">
+        {{ currentModalData?.title }}
+      </h3>
+      <div class="med-workers-page__modal-label">
+        {{ currentModalData?.for }}
+      </div>
+      <h4 class="med-workers-page__secondary-title">
+        О чем поговорим?
+      </h4>
+      <ul class="med-workers-page__modal-list">
+        <li v-for="item in currentModalData?.talkAbout" class="med-workers-page__modal-item">
+          {{ item }}
+        </li>
+      </ul>
+      <div class="med-workers-page__author-block">
+        <img class="med-workers-page__author-image" src="@/assets/images/MainPageDescriptionImageMinor.png" />
+        <div class="med-workers-page__about-author">
+          <div class="med-workers-page__author-label">
+            Автор Вебинара
           </div>
-          <h4 class="med-workers-page__secondary-title">
-            О чем поговорим?
-          </h4>
-          <ul class="med-workers-page__modal-list">
-            <li v-for="item in currentModalData?.talkAbout" class="med-workers-page__modal-item">
-              {{ item }}
-            </li>
-          </ul>
-          <div class="med-workers-page__author-block">
-            <img class="med-workers-page__author-image" src="@/assets/images/MainPageDescriptionImageMinor.png" />
-            <div class="med-workers-page__about-author">
-              <div class="med-workers-page__author-label">
-                Автор Вебинара
-              </div>
-              <div class="med-workers-page__author-title">
-                Профессор, доктор медицинских наук,
-                специалист по трудным и сложным беременностям
-                Джобава Элисо Мурмановна
-              </div>
-            </div>
+          <div class="med-workers-page__author-title">
+            Профессор, доктор медицинских наук,
+            специалист по трудным и сложным беременностям
+            Джобава Элисо Мурмановна
           </div>
         </div>
       </div>
-    </div>
+    </elements-modals-keeper>
   </div>
 </template>
 
@@ -129,83 +124,6 @@ const descriptionItems = [
 
 <style lang="scss" scoped>
   .med-workers-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1460px;
-    margin: 0 auto;
-    padding: 0 40px 150px 40px;
-
-    @media screen and (max-width: 1280px) {
-      max-width: 680px;
-    }
-
-    @media screen and (max-width: 680px) {
-      padding: 0 20px 120px 20px;
-    }
-
-    @media screen and (max-width: 400px) {
-      padding: 0 0 90px 0;
-    }
-
-    &__modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.34);
-      z-index: 4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &__modal-window {
-      width: 760px;
-      padding: 60px;
-      background-color: #ECE7E1;
-      position: relative;
-      max-height: 100%;
-      overflow: hidden;
-    }
-
-    &__modal-scroll-line {
-      overflow-y: scroll;
-      max-height: calc(100vh - 120px);
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-
-    &__close-cross-button {
-      position: absolute;
-      top: 23px;
-      right: 23px;
-      width: 25px;
-      height: 25px;
-      cursor: pointer;
-
-      &:after,
-      &:before {
-        position: absolute;
-        top: 15px;
-        width: 25px;
-        height: 1px;
-        background-color: #000;
-        content: '';
-        transform-origin: center;
-      }
-
-      &:after {
-        transform: rotate(45deg);
-      }
-
-      &:before {
-        transform: rotate(-45deg);
-      }
-    }
 
     &__modal-title {
       color: #644C5C;

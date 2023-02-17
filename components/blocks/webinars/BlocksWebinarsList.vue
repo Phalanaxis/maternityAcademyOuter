@@ -4,54 +4,53 @@
 </script>
 
 <template>
-  <div @click.self="isOpenPopup = false" class="overlay__popup-webinars" :class="{active: isOpenPopup}">
-    <div class="popup">
-      <lazy-svg-close-popup class="close-popup" @click.native="isOpenPopup = false" />
-      <div :class="{['mb-60']: i === 0}" v-if="webinars.dataWebinars[indexDataForPopup]?.idexMixPopup?.length" v-for="(item, i) in webinars.dataWebinars[indexDataForPopup].idexMixPopup">
-        <h2>{{ webinars.dataWebinars[item]?.heading }}</h2>
-        <p class="for-who">{{ webinars.dataWebinars[item]?.forWhoPopup }}</p>
+  <elements-modals-keeper :is-modal-opened="isOpenPopup" @close="isOpenPopup = false">
+    <div :class="{['mb-60']: i === 0}" v-if="webinars.dataWebinars[indexDataForPopup]?.idexMixPopup?.length" v-for="(item, i) in webinars.dataWebinars[indexDataForPopup].idexMixPopup">
+      <h2>{{ webinars.dataWebinars[item]?.heading }}</h2>
+      <p class="for-who">{{ webinars.dataWebinars[item]?.forWhoPopup }}</p>
+      <h2>О чем поговорим?</h2>
+      <p class="about-webinars" v-html="webinars.dataWebinars[item]?.aboutWebinarsPopup.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
+    </div>
+    <div v-else>
+      <h2>{{ webinars.dataWebinars[indexDataForPopup].heading }}</h2>
+      <p class="for-who">{{ webinars.dataWebinars[indexDataForPopup].forWhoPopup }}</p>
+      <h2>О чем поговорим?</h2>
+      <p class="about-webinars" v-html="webinars.dataWebinars[indexDataForPopup].aboutWebinarsPopup.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
+      <div class="mb-60 mt-60" v-if="webinars.dataWebinars[indexDataForPopup].guideNutrition">
+        <h2 class="mb-20">Гайд по питанию</h2>
+        <p class="mb-40">{{ webinars.dataWebinars[indexDataForPopup].guideNutrition }}</p>
         <h2>О чем поговорим?</h2>
-        <p class="about-webinars" v-html="webinars.dataWebinars[item]?.aboutWebinarsPopup.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
+        <p v-html="webinars.dataWebinars[indexDataForPopup].forWhoPopupNuntrition.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
       </div>
-      <div v-else>
-        <h2>{{ webinars.dataWebinars[indexDataForPopup].heading }}</h2>
-        <p class="for-who">{{ webinars.dataWebinars[indexDataForPopup].forWhoPopup }}</p>
-        <h2>О чем поговорим?</h2>
-        <p class="about-webinars" v-html="webinars.dataWebinars[indexDataForPopup].aboutWebinarsPopup.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
-        <div class="mb-60 mt-60" v-if="webinars.dataWebinars[indexDataForPopup].guideNutrition">
-          <h2 class="mb-20">Гайд по питанию</h2>
-          <p class="mb-40">{{ webinars.dataWebinars[indexDataForPopup].guideNutrition }}</p>
-          <h2>О чем поговорим?</h2>
-          <p v-html="webinars.dataWebinars[indexDataForPopup].forWhoPopupNuntrition.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
-        </div>
-        <div class="mb-60" v-if="webinars.dataWebinars[indexDataForPopup].booksRecipes">
-          <h2 class="mb-40">Книга рецептов</h2>
-          <p>В книге рецептов представлено более 70-ти рецептов разнообразного сбалансированного питания во время беременности, подобранного и составленного мною совместно с педиатром и врачом семейной медицины, включающие салаты, закуски, соусы, первые, вторые блюда, десерты, напитки, завтраки</p>
-        </div>
-      </div>
-      <div class="block-author">
-        <img src="~assets/images/avatarAuthor.png" alt="">
-        <div>
-          <p>Автор вебинара</p>
-          <p>Профессор, доктор медицинских наук, специалист по трудным и сложным беременностям Джобава Элисо Мурмановна</p>
-        </div>
+      <div class="mb-60" v-if="webinars.dataWebinars[indexDataForPopup].booksRecipes">
+        <h2 class="mb-40">Книга рецептов</h2>
+        <p>В книге рецептов представлено более 70-ти рецептов разнообразного сбалансированного питания во время беременности, подобранного и составленного мною совместно с педиатром и врачом семейной медицины, включающие салаты, закуски, соусы, первые, вторые блюда, десерты, напитки, завтраки</p>
       </div>
     </div>
-  </div>
+    <div class="block-author">
+      <img src="~assets/images/avatarAuthor.png" alt="">
+      <div>
+        <p>Автор вебинара</p>
+        <p>Профессор, доктор медицинских наук, специалист по трудным и сложным беременностям Джобава Элисо Мурмановна</p>
+      </div>
+    </div>
+  </elements-modals-keeper>
   <div class="webinars-list">
     <div v-for="(item, index) in webinars.dataWebinars" class="webinars-list__card">
       <div class="webinars-list__card-wrapper-img" :class="`wrapperImg${index + 1}`">
         <img v-if="index === 0" :src="item.img" alt="Вебинар">
         <template v-if="index === 0"><svg-gex class="icon icon1" /><svg-oval-icon class="icon icon2" /><svg-almost-circle class="icon icon3" /></template>
-        <img v-if="index > 0 && width > 1280" :src="`/_nuxt/assets/images/webinars/${index}desk.png`" alt="Вебинар">
-        <img v-if="index > 0 && width <= 1280 && width > 680" :src="`/_nuxt/assets/images/webinars/${index}tab.png`" alt="Вебинар">
+        <img v-if="index > 0 && width > 1200" :src="`/_nuxt/assets/images/webinars/${index}desk.png`" alt="Вебинар">
+        <img v-if="index > 0 && width <= 1200 && width > 680" :src="`/_nuxt/assets/images/webinars/${index}tab.png`" alt="Вебинар">
         <img v-if="index > 0 && width <= 680" :src="`/_nuxt/assets/images/webinars/${index}mob.png`" alt="Вебинар">
       </div>
       <div class="webinars-list__card-wrapper-text">
         <p>{{ item.howBe }}</p>
         <h2>{{ item.heading }}</h2>
         <p v-html="item.text" class="how-can-help"></p>
-        <elements-collapse-secondary @click.native="addIndex(index)" class="collapse" title="Подробней" />
+        <div @click="addIndex(index)">
+          <elements-collapse-secondary class="collapse" title="Подробней" />
+        </div>
         <div class="wraper-price">
           <div>
             <p>СТОИМОСТЬ ПРОГРАММЫ</p>
@@ -65,7 +64,7 @@
   </div>
 </template>
 
-<script> 
+<script>
   export default {
     data() {
       return {
@@ -245,11 +244,11 @@
     width: 100%;
     margin: 150px 0 0 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       margin: 110px 0 0 0;
     }
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       margin: 80px 0 0 0;
     }
 
@@ -262,7 +261,7 @@
       padding-bottom: 70px;
       margin-bottom: 70px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: flex;
         flex-direction: column;
       }
@@ -276,18 +275,18 @@
       &:nth-child(2n) {
         .webinars-list__card-wrapper-img {
           order: 1;
-          
-          @media screen and (max-width: 1280px) {
+
+          @media screen and (max-width: 1200px) {
             order: 0;
           }
         }
       }
 
-      
+
 
       .icon {
         position: absolute;
-      } 
+      }
 
       .wrapperImg1 {
         justify-content: flex-end;
@@ -299,8 +298,8 @@
           width: 107px;
           height: 106px;
           transform: rotate(20deg);
-          
-          @media screen and (max-width: 1280px) {
+
+          @media screen and (max-width: 1200px) {
             width: 55px;
             height: 55px;
             top: -12px;
@@ -315,7 +314,7 @@
           bottom: -31px;
           left: 123px;
 
-          @media screen and (max-width: 1280px) {
+          @media screen and (max-width: 1200px) {
             display: none;
           }
         }
@@ -328,7 +327,7 @@
           bottom: -10px;
           left: -32px;
 
-          @media screen and (max-width: 1280px) {
+          @media screen and (max-width: 1200px) {
             width: 72px;
             height: 70px;
             bottom: 47px;
@@ -346,7 +345,7 @@
         justify-content: flex-end;
         padding-right: 35px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           padding: 0;
 
           img {
@@ -359,7 +358,7 @@
       .wrapperImg3 {
         justify-content: flex-start;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           padding: 0;
 
           img {
@@ -378,7 +377,7 @@
         justify-content: flex-end;
         padding-right: 45px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           padding: 0;
 
           img {
@@ -391,7 +390,7 @@
       .wrapperImg5 {
         justify-content: flex-start;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           padding: 0;
 
           img {
@@ -405,7 +404,7 @@
         justify-content: flex-end;
         padding-right: 42px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           padding: 0;
 
           img {
@@ -420,7 +419,7 @@
         position: relative;
         right: 95px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           right: 24px;
 
           img {
@@ -433,7 +432,7 @@
       .wrapperImg8 {
         justify-content: flex-end;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           padding: 0;
 
           img {
@@ -453,7 +452,7 @@
         position: relative;
         right: 122px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           padding: 0;
           position: static;
 
@@ -470,7 +469,7 @@
         position: absolute;
         bottom: 0px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           width: 100vw;
           margin-left: calc(50% - 50vw)
         }
@@ -480,7 +479,7 @@
         position: relative;
         display: flex;
         width: 100%;
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1200px) {
           align-items: flex-start;
           justify-content: flex-start!important;
           width: fit-content;
@@ -492,7 +491,7 @@
         }
 
         img {
-          @media screen and (max-width: 1280px) {
+          @media screen and (max-width: 1200px) {
             width: 198px;
             height: 180px;
             margin-bottom: 60px;
@@ -539,6 +538,7 @@
         .collapse {
           border-bottom: 1px solid rgba(197, 177, 178, 1);
           margin-top: 40px;
+          pointer-events: none;
         }
 
         .wraper-price {
@@ -550,7 +550,7 @@
             flex-direction: column;
             margin-top: 30px;
           }
-          
+
           p:last-child {
             margin-top: 10px;
             font-family: Oswald;

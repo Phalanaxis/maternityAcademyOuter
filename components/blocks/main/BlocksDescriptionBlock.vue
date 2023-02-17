@@ -46,20 +46,15 @@
 
 <style lang="scss" scoped>
   .main-description {
-    padding: 120px 0;
-    max-width: 1160px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-
-    @media screen and (max-width: 1280px) {
-      max-width: 680px;
-    }
 
     &__main-block,
     &__sub-block {
       display: flex;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         flex-direction: column;
       }
     }
@@ -68,7 +63,7 @@
       max-width: 55%;
       margin: 0 80px 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
         margin: 50px 0 0 0;
       }
@@ -78,7 +73,7 @@
       position: relative;
       max-width: calc(45% - 80px);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         order: -1;
         max-width: 50%;
       }
@@ -92,7 +87,7 @@
       max-width: 55%;
       margin: 0 80px 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
         margin: 0;
       }
@@ -102,7 +97,7 @@
       position: relative;
       max-width: calc(45% - 80px);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
         margin: 20px 0 0 0;
       }
@@ -122,7 +117,7 @@
       line-height: 130%;
       margin: 20px 0 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         font-size: 30px;
       }
 
@@ -154,8 +149,12 @@
         width: 25px;
         height: 15px;
         content: '';
-        background-image: url("assets/images/arrow-right.png");
+        background-image: url("../../../assets/images/arrow-right.png");
         background-repeat: no-repeat;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 15px;
       }
     }
 
@@ -206,12 +205,24 @@
       font-size: 32px;
       line-height: 130%;
       margin: 0;
+
+      @media screen and (max-width: 1200px) {
+        font-size: 30px;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 28px;
+      }
     }
 
     &__sub-block-text {
       font-size: 16px;
       line-height: 150%;
       color: #232323;
+
+      @media screen and (max-width: 680px) {
+        font-size: 15px;
+      }
     }
   }
 </style>

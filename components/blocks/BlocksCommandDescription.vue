@@ -29,7 +29,7 @@
     display: flex;
     justify-content: space-between;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       padding: 80px 0;
       flex-direction: column;
     }
@@ -38,7 +38,7 @@
       position: relative;
       width: 300px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 50%;
       }
 
@@ -54,7 +54,7 @@
       width: 300px;
       height: 300px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
         height: 100%;
       }
@@ -64,7 +64,7 @@
       width: 50%;
       margin: 0 0 0 150px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
         margin: 50px 0 0 0;
       }
@@ -84,7 +84,7 @@
       top: 0;
       right: 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         right: -50%;
       }
 

@@ -58,7 +58,6 @@ export default {
 <style lang="scss" scoped>
 .if-you-block {
   width: 100%;
-  padding: 0 0 150px 0;
 
   &__title {
     color: #644C5C;
@@ -77,7 +76,7 @@ export default {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       grid-template-columns: 1fr 1fr;
     }
 

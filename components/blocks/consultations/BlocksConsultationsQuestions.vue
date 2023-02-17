@@ -21,12 +21,15 @@
 <style lang="scss" scoped>
   .questions-block {
     width: 100%;
-    margin: 150px 0;
 
     &__title {
       color: #644C5C;
       font-size: 38px;
       margin: 0 0 40px 0;
+
+      @media screen and (max-width: 1200px) {
+        font-size: 36px;
+      }
 
       @media screen and (max-width: 680px) {
         font-size: 28px;

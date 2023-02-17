@@ -117,12 +117,19 @@ const itemArray = [
 <style lang="scss" scoped>
   .about-education {
     width: 100%;
-    margin: 150px 0 0 0;
 
     &__title {
       font-size: 38px;
       color: #644C5C;
       margin: 0 0 40px 0;
+
+      @media screen and (max-width: 1200px) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 30px;
+      }
     }
 
     &__list {
@@ -130,7 +137,7 @@ const itemArray = [
       grid-template-columns: 1fr 1fr;
       grid-gap: 40px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
         grid-gap: 20px;
       }
@@ -140,6 +147,10 @@ const itemArray = [
       background: #ECE7E1;
       border-radius: 15px;
       padding: 40px;
+
+      @media screen and (max-width: 680px) {
+        padding: 30px;
+      }
     }
 
     &__item-year {
@@ -151,7 +162,11 @@ const itemArray = [
     &__item-text {
       color: #232323;
       font-size: 16px;
-      line-height: 24px;
+      line-height: 150%;
+
+      @media screen and (max-width: 680px) {
+        font-size: 15px;
+      }
     }
 
     &__additional {
@@ -166,7 +181,7 @@ const itemArray = [
       font-size: 16px;
       max-width: 70%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
       }
 

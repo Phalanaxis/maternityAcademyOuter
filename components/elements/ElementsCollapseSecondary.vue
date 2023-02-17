@@ -72,8 +72,10 @@ export default {
   &__content {
     padding: 0 20px 20px 0;
     max-width: 70%;
+    font-size: 16px;
+    line-height: 150%;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       max-width: 100%;
     }
   }

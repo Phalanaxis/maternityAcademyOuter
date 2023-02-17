@@ -6,7 +6,7 @@
           to="/"
           class="academy-footer__logo-wrapper"
         >
-          <img class="academy-footer__logo" src="~assets/images/logo.png" alt="" />
+          <img class="academy-footer__logo" src="~assets/images/logo.svg" alt="" />
         </nuxt-link>
         <div class="academy-footer__contacts-wrapper">
           <div>
@@ -29,22 +29,22 @@
           <div class="academy-footer__column-title">
             Форматы работы
           </div>
-          <router-link class="academy-footer__column-item" to="/">
+          <router-link class="academy-footer__column-item" to="/projects">
             Персонализированные проекты
           </router-link>
-          <router-link class="academy-footer__column-item" to="/">
+          <router-link class="academy-footer__column-item" to="/school">
             Школа беременных и мам
           </router-link>
-          <router-link class="academy-footer__column-item" to="/">
+          <router-link class="academy-footer__column-item" to="/forMedWorkers">
             Специалистам и медработникам
           </router-link>
           <router-link class="academy-footer__column-item" to="/consultations">
             Консультации
           </router-link>
-          <router-link class="academy-footer__column-item" to="/">
+          <router-link class="academy-footer__column-item" to="/guides">
             Гайды и методички
           </router-link>
-          <router-link class="academy-footer__column-item" to="/">
+          <router-link class="academy-footer__column-item" to="/webinars">
             Вебинары
           </router-link>
         </div>
@@ -104,7 +104,7 @@
     background-color: #ECE7E1;
     padding: 72px 140px 40px 140px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       padding: 60px 70px;
     }
 
@@ -116,20 +116,21 @@
       display: flex;
       justify-content: space-between;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         flex-direction: column;
       }
     }
 
     &__bottom {
       margin: 60px 0 0 0;
-      padding: 30px 0 0 0;
+      padding: 30px 45px 0 0;
       border-top: 1px solid #C5B1B2;
       display: flex;
       justify-content: right;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         justify-content: left;
+        padding: 30px 0 0 0;
       }
 
       @media screen and (max-width: 680px) {
@@ -143,7 +144,7 @@
       flex-direction: column;
       align-items: center;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         align-items: normal;
         width: auto;
       }
@@ -154,7 +155,7 @@
       height: 74px;
       margin: 0 0 30px 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         flex-direction: column;
       }
     }
@@ -176,7 +177,7 @@
       width: 100%;
       margin: 40px 0 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         order: -1;
         margin: 0;
         width: 50%;
@@ -198,11 +199,15 @@
     }
 
     &__navigation {
-      max-width: calc(100% - 200px);
+      max-width: calc(100% - 280px);
+      width: 100%;
       display: flex;
+      justify-content: space-between;
+      padding: 0 45px 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
+        padding: 0;
       }
 
       @media screen and (max-width: 680px) {
@@ -213,10 +218,10 @@
     &__column {
       display: flex;
       flex-direction: column;
-      margin: 0 120px 0 0;
+      //margin: 0 120px 0 0;
       width: 260px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 50%;
       }
 
@@ -241,6 +246,11 @@
       color: #232323;
       font-size: 16px;
       margin: 0 0 15px 0;
+      transition: color .2s;
+
+      &:hover {
+        color: #78353E;
+      }
     }
 
     &__arrow-to-top-button {
@@ -256,7 +266,7 @@
       border-radius: 50px;
       cursor: pointer;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: 60px;
         right: 70px;
       }
@@ -272,9 +282,10 @@
     }
 
     &__bottom-column {
-      margin: 0 120px 0 0;
-      width: 260px;
+      //margin: 0 120px 0 0;
+      //width: 260px;
       color: #575757;
+      width: calc((100% - 280px)/2);
 
       @media screen and (max-width: 680px) {
         margin: 0 0 15px 0;
@@ -283,7 +294,7 @@
 
     &__contacts-wrapper {
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: flex;
         margin: 30px 0 60px 0;
       }

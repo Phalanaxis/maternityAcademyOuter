@@ -41,7 +41,7 @@ const store = useArticlesStore()
     column-gap: 40px;
     width: 100%;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -51,13 +51,13 @@ const store = useArticlesStore()
       padding: 30px;
       padding-bottom: 52px;
       max-width: 560px;
-      width: 100%;  
+      width: 100%;
       background: rgba(236, 231, 225, 1);
       border-radius: 15px;
       height: 340px;
       position: relative;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: auto;
       }
 

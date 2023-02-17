@@ -47,9 +47,8 @@
 <style lang="scss" scoped>
   .how-to-block {
     width: 100%;
-    margin: 150px 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       margin: 120px 0;
     }
 
@@ -63,7 +62,7 @@
       line-height: 130%;
       margin: 0 0 40px 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         font-size: 36px;
       }
 
@@ -83,7 +82,7 @@
         margin: 0 0 15px 0;
       }
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         flex-direction: column;
       }
     }
@@ -94,7 +93,7 @@
       line-height: 130%;
       margin: 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         margin: 0 0 15px 0;
       }
     }
@@ -102,7 +101,7 @@
     &__step-item-content {
       width: 50%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
       }
     }

@@ -3,9 +3,7 @@
     <h3 class="test-block__title">
       Ответьте на несколько вопросов, и мы подберем для вас подходящий продукт
     </h3>
-    <div class="test-block__test-button">
-      Пройти тест
-    </div>
+    <elements-buttons-secondary title="Пройти тест" hover-background="#C99D7A" />
     <svg-star class="test-block__star" />
     <svg-half-circle class="test-block__half-circle" />
     <svg-pine-icon class="test-block__pine-icon" />
@@ -23,7 +21,7 @@
     padding: 80px 0;
     position: relative;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       //order: -1;
     }
 
@@ -57,7 +55,7 @@
       right: 60px;
       transform: scale(1.2);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: -40px;
         right: 30px;
       }
@@ -77,7 +75,7 @@
       fill: #FEF8F2;
       transform: scale(0.8);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -88,7 +86,7 @@
       left: 110px;
       fill: #C5B1B2;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         bottom: -20px;
         left: 0px;
       }
@@ -104,7 +102,7 @@
       left: 220px;
       fill: #FEF8F2;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }

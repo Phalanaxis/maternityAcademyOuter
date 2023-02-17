@@ -79,7 +79,7 @@
     position: relative;
     padding: 70px 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       order: 0;
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr;
@@ -87,7 +87,7 @@
     }
 
     .img-card-wrapper {
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         margin-bottom: 20px;
       }
     }
@@ -95,8 +95,8 @@
     &:nth-child(even) {
       .content {
         order: -1;
-        
-        @media screen and (max-width: 1280px) {
+
+        @media screen and (max-width: 1200px) {
           order: 0;
         }
       }
@@ -108,7 +108,7 @@
       top: 0;
       width: 100%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 100vw;
         margin-left: calc(50% - 50vw)
       }

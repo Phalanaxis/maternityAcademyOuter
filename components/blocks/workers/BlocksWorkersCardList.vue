@@ -74,14 +74,13 @@
 <style lang="scss" scoped>
   .workers-list {
     width: 100%;
-    margin: 90px 0 0 0;
 
     &__title {
       color: #644C5C;
       font-size: 38px;
       margin: 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         font-size: 36px;
       }
 
@@ -102,13 +101,13 @@
         .workers-list__info-panel {
           order: -1;
 
-          @media screen and (max-width: 1280px) {
+          @media screen and (max-width: 1200px) {
             order: 0;
           }
         }
       }
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         flex-direction: column;
       }
     }
@@ -116,7 +115,7 @@
     &__card-image {
       width: 35%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 50%;
       }
     }
@@ -124,7 +123,7 @@
     &__info-panel {
       width: 50%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
       }
     }
@@ -136,7 +135,7 @@
       text-transform: uppercase;
       color: #232323;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         margin: 40px 0 0 0;
       }
     }
@@ -246,7 +245,7 @@
       font-size: 16px;
       line-height: 150%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 70%;
       }
     }

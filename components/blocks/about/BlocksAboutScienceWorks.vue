@@ -67,7 +67,15 @@ const worksList = [
     &__title {
       color: #644C5C;
       font-size: 38px;
-      margin: 150px 0 20px 0;
+      margin: 0 0 20px 0;
+
+      @media screen and (max-width: 1200px) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 30px;
+      }
     }
 
     &__works-list {
@@ -75,7 +83,7 @@ const worksList = [
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 40px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
         grid-gap: 20px;
       }
@@ -97,12 +105,13 @@ const worksList = [
         background-color: #644C5C;
       }
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         height: 320px;
       }
 
       @media screen and (max-width: 680px) {
         height: auto;
+        padding: 30px;
       }
     }
 
@@ -116,12 +125,20 @@ const worksList = [
       color: #FEF8F2;
       font-size: 26px;
       margin: 10px 0 20px 0;
+
+      @media screen and (max-width: 680px) {
+        font-size: 22px;
+      }
     }
 
     &__item-text {
       color: #FEF8F2;
       font-size: 16px;
-      line-height: 24px;
+      line-height: 150%;
+
+      @media screen and (max-width: 680px) {
+        font-size: 15px;
+      }
     }
 
     &__item-arrow {

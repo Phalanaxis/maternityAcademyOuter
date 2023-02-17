@@ -136,11 +136,12 @@
         <h3 class="project-block__additional-right-title">
           Старт третьего потока — январь 2023
         </h3>
-        <div class="project-block__additional-button-container">
-          <div class="project-block__additional-button">
-            Записаться в лист ожидания
-          </div>
-        </div>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSemeWdP_plcFlkOOFZ2NL5hMcyMMN9bWW2pc4OZkgZcLow8pA/viewform?usp=sharing"
+          class="project-block__additional-button-container"
+        >
+          <elements-buttons-secondary title="Записаться в лист ожидания" />
+        </a>
         <svg-almost-circle class="project-block__additional-almost-circle"/>
       </div>
     </div>
@@ -201,7 +202,7 @@ export default {
       align-items: center;
       text-align: center;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         padding: 60px 0 150px 0;
       }
     }
@@ -211,7 +212,7 @@ export default {
       font-size: 38px;
       max-width: 500px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         font-size: 36px;
       }
 
@@ -236,7 +237,7 @@ export default {
       display: flex;
       align-items: center;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         bottom: -100px;
         left: calc(50% - 105px);
       }
@@ -268,7 +269,7 @@ export default {
       bottom: -20px;
       right: 70px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         bottom: 40px;
         right: -40px;
       }
@@ -285,7 +286,7 @@ export default {
       bottom: -40px;
       right: 160px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -300,7 +301,7 @@ export default {
       grid-gap: 40px;
       margin: 40px 0 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -315,7 +316,7 @@ export default {
       line-height: 130%;
       margin: 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         font-size: 36px;
       }
 
@@ -338,7 +339,7 @@ export default {
       grid-gap: 40px;
       margin: 50px 0 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
       }
     }
@@ -371,7 +372,7 @@ export default {
       bottom: -40px;
       right: 90px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         bottom: unset;
         top: -40px;
       }
@@ -404,7 +405,7 @@ export default {
       font-size: 16px;
       max-width: 70%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
       }
 
@@ -428,7 +429,7 @@ export default {
       flex-direction: row;
       justify-content: space-between;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         flex-direction: column;
       }
     }
@@ -436,7 +437,7 @@ export default {
     &__additional-left-column,
     &__additional-right-column {
       width: calc((100% - 120px)/2);
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
       }
     }
@@ -452,7 +453,7 @@ export default {
       line-height: 130%;
       margin: 30px 0 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         font-size: 30px;
       }
     }
@@ -466,7 +467,7 @@ export default {
       flex-direction: column;
       justify-content: space-between;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         margin: 30px 0 0 0;
         align-items: center;
       }
@@ -479,31 +480,14 @@ export default {
       max-width: 70%;
       margin: 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
       }
     }
 
     &__additional-button-container {
       display: flex;
-    }
-
-    &__additional-button {
-      padding: 18px 45px;
-      background-color: #FEF8F2;
-      border-radius: 5px;
-      font-size: 18px;
-      color: #644C5C;
-      cursor: pointer;
-      white-space: nowrap;
-
-      @media screen and (max-width: 1280px) {
-        margin: 40px 0 0 0;
-      }
-
-      @media screen and (max-width: 680px) {
-        font-size: 16px;
-      }
+      text-decoration: none;
     }
 
     &__additional-almost-circle {
@@ -513,7 +497,7 @@ export default {
       fill: #839389;
       transform: scale(1.5) rotate(40deg);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }

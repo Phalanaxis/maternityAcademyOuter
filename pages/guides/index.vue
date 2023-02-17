@@ -138,7 +138,7 @@ export default {
     margin: 0 auto;
     padding: 0 40px 150px 40px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       max-width: 680px;
     }
 

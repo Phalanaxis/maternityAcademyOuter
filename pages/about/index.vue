@@ -1,19 +1,13 @@
 <template>
-  <div class="page__container">
+  <div class="section-container">
     <Blocks-about-intro />
-    <Blocks-about-science-works />
-    <blocks-about-directions />
-    <blocks-about-education />
-    <blocks-message-us />
+    <Blocks-about-science-works class="section-block" />
+    <blocks-about-directions class="section-block" />
+    <blocks-about-education class="section-block" />
+    <blocks-message-us class="section-block" />
   </div>
 </template>
-<script>
- export default {
-  mounted() {
-    console.log(this.$store)
-  }
- }
-</script>
+
 <style lang="scss" scoped>
 .page {
 
@@ -25,7 +19,7 @@
      margin: 0 auto;
      padding: 0 40px 150px 40px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       max-width: 680px;
     }
 

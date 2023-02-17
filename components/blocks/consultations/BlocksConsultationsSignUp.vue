@@ -28,7 +28,7 @@
     flex-direction: column;
     align-items: center;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       padding: 60px 0;
     }
 
@@ -74,7 +74,7 @@
       top: 50%;
       fill: #839389;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: unset;
         left: 20px;
         bottom: 10%;
@@ -94,7 +94,7 @@
       top: 60%;
       fill: #FEF8F2;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         left: -40px;
         top: unset;
         bottom: 30%;
@@ -112,7 +112,7 @@
       top: 20%;
       fill: #FEF8F2;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -124,7 +124,7 @@
       top: -20px;
       fill: #C5B1B2;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }

@@ -1,6 +1,6 @@
 <template>
-      <img v-if="width > 1280" :src="`/_nuxt/assets/images/${folder}/${index}desk.png`" alt="Вебинар">
-      <img v-if="width <= 1280" :src="`/_nuxt/assets/images/${folder}/${index}mob.png`" alt="Вебинар">
+      <img v-if="width > 1200" :src="`/_nuxt/assets/images/${folder}/${index}desk.png`" alt="Вебинар">
+      <img v-if="width <= 1200" :src="`/_nuxt/assets/images/${folder}/${index}mob.png`" alt="Вебинар">
 </template>
 <script>
  export default {

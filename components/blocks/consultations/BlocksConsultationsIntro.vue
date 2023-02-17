@@ -7,9 +7,9 @@
       Индивидуальные консультации с Элисо Джобава и ее командой очно в клинике и онлайн
     </div>
     <div class="consultations-intro__button-container">
-      <router-link class="consultations-intro__button" to="/consultations#consultationSignIn">
-        Подробнее
-      </router-link>
+      <nuxt-link to="/consultations#consultationSignIn">
+        <elements-buttons-secondary title="Подробнее" />
+      </nuxt-link>
     </div>
     <svg-oval-icon class="consultations-intro__oval" />
     <svg-cheese-icon class="consultations-intro__cheese" />
@@ -29,10 +29,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 90px 0 0 0;
 
-    @media screen and (max-width: 1280px) {
-      margin: 50px 0 0 0;
+    @media screen and (max-width: 1200px) {
       padding: 60px 0;
     }
 
@@ -85,7 +83,7 @@
       bottom: 110px;
       transform: rotate(50deg);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         transform: rotate(50deg) scale(0.7);
         right: 50px;
         bottom: 50px;
@@ -107,7 +105,7 @@
       right: 25px;
       bottom: 35px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -118,7 +116,7 @@
       bottom: -25px;
       right: 100px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         right: 50px;
       }
 
@@ -133,7 +131,7 @@
       left: -65px;
       top: calc((100% - 152px)/2);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: -30px;
         left: -55px;
         width: 110px;
@@ -152,7 +150,7 @@
       bottom: 60px;
       transform: scale(1.5);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }

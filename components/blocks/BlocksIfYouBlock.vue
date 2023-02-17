@@ -11,11 +11,9 @@
         :text="item.text"
       />
     </div>
-    <div class="if-you-block__button-block">
-      <div class="if-you-block__button">
-        Выбрать формат работы
-      </div>
-    </div>
+    <nuxt-link to="/#workFormat" class="if-you-block__button-block">
+      <elements-buttons-primary title="Выбрать формат работы" />
+    </nuxt-link>
   </div>
 </template>
 
@@ -76,7 +74,6 @@ const tabsList = [
 <style lang="scss" scoped>
   .if-you-block {
     width: 100%;
-    padding: 0 0 150px 0;
 
     &__title {
       color: #644C5C;
@@ -95,7 +92,7 @@ const tabsList = [
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 40px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -105,26 +102,12 @@ const tabsList = [
     }
 
     &__button-block {
-      margin: 60px 0 0 0;
+      text-decoration: none;
       display: flex;
       justify-content: center;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         justify-content: left;
-      }
-    }
-
-    &__button {
-      color: #FEF8F2;
-      font-size: 18px;
-      font-weight: 600;
-      padding: 18px 45px;
-      background: #064848;
-      border-radius: 5px;
-      cursor: pointer;
-
-      @media screen and (max-width: 680px) {
-        font-size: 16px;
       }
     }
   }

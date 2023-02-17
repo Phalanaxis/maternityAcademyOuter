@@ -58,11 +58,11 @@
       width: 100%;
       height: 470px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         height: 600px;
       }
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         height: 500px;
       }
     }
@@ -81,7 +81,7 @@
       width: 100%;
       margin: 150px 0 40px 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         flex-direction: column;
         align-items: normal;
       }
@@ -92,7 +92,7 @@
       margin: 0;
       font-size: 38px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         margin: 0 0 20px 0;
       }
 

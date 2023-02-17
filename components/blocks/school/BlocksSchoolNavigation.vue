@@ -5,15 +5,15 @@
         Школа беременных — это пространство для беременных женщин и мам в послеродовом периоде
       </h2>
       <div class="school-nav__tags-list">
-        <div class="school-nav__tag">
+        <nuxt-link class="school-nav__tag" to="/school#schoolProgram">
           Программа
-        </div>
-        <div class="school-nav__tag">
+        </nuxt-link>
+        <nuxt-link class="school-nav__tag">
           Тарифы
-        </div>
-        <div class="school-nav__tag">
+        </nuxt-link>
+        <nuxt-link class="school-nav__tag">
           Специалисты
-        </div>
+        </nuxt-link>
       </div>
     </div>
     <div class="school-nav__right-column">
@@ -114,6 +114,7 @@
       margin: 0 0 10px 0;
       cursor: pointer;
       transition: background-color .2s;
+      text-decoration: none;
 
       &:hover {
         background-color: #064848;

@@ -1,33 +1,32 @@
 <template>
-  <div class="intro-block__container">
-    <svg-arrow class="intro-block__arrow" />
-    <svg-star-nine class="intro-block__star" />
-    <svg-heart-icon class="intro-block__heart" />
-    <div class="intro-block__figures-block-left">
+  <div class="school-intro-block__container">
+    <svg-arrow class="school-intro-block__arrow" />
+    <svg-star-nine class="school-intro-block__star" />
+    <svg-heart-icon class="school-intro-block__heart" />
+    <div class="school-intro-block__figures-block-left">
       <img
         src="@/assets/images/school/starImage.png"
-        class="intro-block__figures-rectangle-image"
+        class="school-intro-block__figures-rectangle-image"
       >
     </div>
-    <h1 class="intro-block__title">
+    <h1 class="school-intro-block__title">
       Школа беременных — место, где будущие<br> мамы обретают спокойствие
     </h1>
-    <div class="intro-block__text">
+    <div class="school-intro-block__text">
       Здесь вы получите новые знания и будете чувствовать себя уверенно в любой ситуации
     </div>
-    <nuxt-link to="/" class="intro-block__button">
-      Подробнее
+    <nuxt-link to="/school#schoolProgram">
+      <elements-buttons-secondary title="Подробнее" />
     </nuxt-link>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.intro-block {
+.school-intro-block {
 
   &__container {
     width: 100%;
     position: relative;
-    margin: 90px 0 0 0;
     padding: 80px 0;
     background-color: #C5B1B2;
     border-radius: 15px;
@@ -66,20 +65,6 @@
     line-height: 24px;
   }
 
-  &__button {
-    color: #644C5C;
-    background-color: #FEF8F2;
-    padding: 18px 45px;
-    border-radius: 5px;
-    margin: 40px 0 0 0;
-    font-weight: 600;
-    font-size: 18px;
-    text-decoration: none;
-
-    @media screen and (max-width: 680px) {
-      font-size: 16px;
-    }
-  }
 
   &__figures-block-left,
   &__figures-block-right {
@@ -108,6 +93,10 @@
     position: absolute;
     top: 0;
     left: -50%;
+
+    @media screen and (max-width: 680px) {
+      transform: scale(0.8);
+    }
   }
 
   &__figures-block-right {

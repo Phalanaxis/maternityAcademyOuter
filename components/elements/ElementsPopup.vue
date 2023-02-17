@@ -40,7 +40,7 @@
       position: relative;
       margin: 30px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         padding-right: 90px;
       }
 

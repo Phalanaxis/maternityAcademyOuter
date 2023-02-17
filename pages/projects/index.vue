@@ -1,10 +1,10 @@
 <template>
   <div class="projects-page__container">
     <blocks-projects-intro />
-    <blocks-projects-repro class="projects-page__project" />
-    <blocks-projects-meno class="projects-page__project" />
-    <blocks-projects-control class="projects-page__project" />
-    <blocks-projects-academy />
+    <blocks-projects-repro id="repo" class="projects-page__project" />
+    <blocks-projects-meno id="meno" class="projects-page__project" />
+    <blocks-projects-control id="control" class="projects-page__project" />
+    <blocks-projects-academy id="academy" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@
       margin: 0 auto;
       padding: 0 40px 150px 40px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 680px;
       }
 
@@ -35,11 +35,11 @@
     &__project {
       margin: 120px 0 0 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         margin: 90px 0 0 0;
       }
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         margin: 70px 0 0 0;
       }
     }

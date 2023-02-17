@@ -77,7 +77,9 @@ import union from '@/components/svg/union.vue'
       font-weight: 400;
 
       @media screen and (max-width: 680px) {
+        font-size: 15px;
         margin: 0 0 0 20px;
+        max-width: calc(100% - 60px);
       }
     }
 

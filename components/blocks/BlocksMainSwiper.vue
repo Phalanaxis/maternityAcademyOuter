@@ -11,7 +11,7 @@
     <div class="main-swiper__swiper-block">
       <swiper
         :space-between="40"
-        :breakpoints="{ 1280:{ slidesPerView: 4}, 680:{ slidesPerView: 2 }, 0:{ slidesPerView: 1 } }"
+        :breakpoints="{ 1200:{ slidesPerView: 4}, 680:{ slidesPerView: 2 }, 0:{ slidesPerView: 1 } }"
       >
         <swiper-slide v-for="item in slidesArray">
           <elements-main-swiper-item
@@ -220,8 +220,8 @@ const slidesArray = [
     margin: 150px 0 0 0;
     position: relative;
 
-    @media screen and (max-width: 1280px) {
-      margin: 100px 0 0 0;
+    @media screen and (max-width: 1200px) {
+      margin: 90px 0 0 0;
     }
 
     &__title {
@@ -229,6 +229,14 @@ const slidesArray = [
       font-size: 38px;
       text-align: left;
       margin: 0 0 30px 0;
+
+      @media screen and (max-width: 1200px) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 28px;
+      }
     }
 
     &__text {
@@ -237,8 +245,12 @@ const slidesArray = [
       font-size: 16px;
       line-height: 24px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 15px;
       }
     }
 
@@ -253,7 +265,7 @@ const slidesArray = [
       top: 30px;
       right: 60px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -264,7 +276,7 @@ const slidesArray = [
       top: 120px;
       right: 10px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }

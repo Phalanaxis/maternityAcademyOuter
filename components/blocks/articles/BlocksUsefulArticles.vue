@@ -49,7 +49,7 @@
     height: 400px;
     width: 360px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       height: 400px;
       width: 300px;
       margin-bottom: 20px;
@@ -67,11 +67,11 @@
     flex-wrap: wrap;
     margin-bottom: 30px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       gap: 10px;
       justify-content: space-between;
     }
-    
+
     @media screen and (max-width: 680px) {
       gap: 10px;
       justify-content: center;
@@ -80,7 +80,7 @@
     img {
       margin-bottom: 20px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 300px;
       }
     }

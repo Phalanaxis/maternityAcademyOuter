@@ -23,9 +23,7 @@
     <div class="intro-block__text">
       Научитесь правильно заботиться о себе вместе со специалистами международного уровня
     </div>
-    <nuxt-link to="/#workFormats" class="intro-block__button">
-      Выбрать формат работы
-    </nuxt-link>
+    <elements-buttons-secondary title="Выбрать формат работы" @click="$router.push('/#workFormats')" />
   </div>
 </template>
 
@@ -33,10 +31,8 @@
   .intro-block {
 
     &__container {
+      width: 100%;
       position: relative;
-      width: 1160px;
-      height: 425px;
-      margin: 90px 0 0 0;
       padding: 80px 0;
       background-color: #839389;
       border-radius: 15px;
@@ -44,7 +40,7 @@
       flex-direction: column;
       align-items: center;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         width: 680px;
         height: auto;
         padding: 60px 50px;
@@ -75,21 +71,6 @@
       line-height: 24px;
     }
 
-    &__button {
-      color: #644C5C;
-      background-color: #FEF8F2;
-      padding: 18px 45px;
-      border-radius: 5px;
-      margin: 40px 0 0 0;
-      font-weight: 600;
-      font-size: 18px;
-      text-decoration: none;
-
-      @media screen and (max-width: 680px) {
-        font-size: 16px;
-      }
-    }
-
     &__figures-block-left,
     &__figures-block-right {
       position: absolute;
@@ -101,7 +82,7 @@
       top: 35%;
       left: 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: unset;
         bottom: 15%;
       }
@@ -125,7 +106,13 @@
       right: -50%;
       fill: #C99D7A;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
+        right: -10%;
+      }
+
+      @media screen and (max-width: 680px) {
+        transform: scale(0.5);
+        top: 0;
         right: -10%;
       }
     }
@@ -136,8 +123,12 @@
       right: -50%;
       fill: #FEF8F2;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         right: -20%;
+      }
+
+      @media screen and (max-width: 680px) {
+        transform: scale(0.5);
       }
     }
 
@@ -158,7 +149,7 @@
       top: 0;
       fill: #064848;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -182,7 +173,7 @@
       left: 15%;
       fill: #78353E;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }

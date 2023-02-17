@@ -9,9 +9,7 @@
     <div class="message-us__message-us-title">
       <h3 class="message-us__message-us-title" v-html="label" />
       <div class="message-us__message-us-button-container">
-        <div class="message-us__message-us-button">
-          Написать в Telegram
-        </div>
+        <elements-buttons-secondary title="Написать в Telegram" />
       </div>
     </div>
   </div>
@@ -34,8 +32,7 @@
     &__message-us-block {
       width: 100%;
       position: relative;
-      margin: 50px 0 0 0;
-      padding: 80px 0;
+      padding: 80px 20px;
       background-color: #064848;
       border-radius: 15px;
       display: flex;
@@ -74,7 +71,7 @@
       bottom: 100px;
       transform: scale(2);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         right: -20px;
         bottom: 60px;
       }
@@ -93,7 +90,7 @@
       left: 90px;
       top: -10px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: -30px;
         left: 50px;
         transform: rotate(75deg) scale(0.7);
@@ -111,7 +108,7 @@
       left: 100px;
       transform: scale(1.2) rotate(-20deg);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -123,7 +120,7 @@
       bottom: 50px;
       transform: rotate(-30deg);
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -134,7 +131,7 @@
       right: -25px;
       bottom: 120px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -145,7 +142,7 @@
       top: 110px;
       left: 220px;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         top: 30px;
         left: 30px;
       }

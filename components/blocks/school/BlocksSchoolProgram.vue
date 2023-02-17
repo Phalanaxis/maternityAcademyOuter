@@ -101,11 +101,19 @@ const tabs = [
 <style lang="scss" scoped>
   .school-program {
     width: 100%;
-    margin: 150px 0 0 0;
 
     &__title {
       font-size: 38px;
       color: #644C5C;
+      margin: 0 0 40px 0;
+
+      @media screen and (max-width: 1200px) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 30px;
+      }
     }
 
     &__required-collapse {
@@ -123,7 +131,7 @@ const tabs = [
       font-size: 16px;
       max-width: 70%;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
       }
 

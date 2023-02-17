@@ -9,8 +9,10 @@
     </div>
   </div>
   <div class="section-container">
-    <blocks-school-program />
-    <blocks-school-perks />
+    <blocks-school-program id="schoolProgram" class="section-block" />
+    <blocks-school-tariff class="section-block" />
+    <blocks-school-perks class="section-block" />
     <blocks-school-swiper />
+    <blocks-school-questions class="section-block" />
   </div>
 </template>

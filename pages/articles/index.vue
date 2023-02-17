@@ -1,7 +1,7 @@
 <template>
   <div class="page__container">
     <h1>Полезные материалы и статьи</h1>
-      <blocks-articles-cards :data="data.dataCard"/> 
+      <blocks-articles-cards :data="data.dataCard"/>
       <blocks-media-articles />
       <blocks-slider-articles />
     <blocks-useful-articles />
@@ -13,7 +13,7 @@
   import {useUsefulStore} from '~~/stores/articles/usefulStore'
 
   const store = useUsefulStore();
-  const data = useArticlesStore();  
+  const data = useArticlesStore();
 </script>
 <style lang="scss" scoped>
 .page {
@@ -26,7 +26,7 @@
      margin: 0 auto;
      padding: 0 40px 150px 40px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       max-width: 720px;
     }
 
@@ -37,7 +37,7 @@
     @media screen and (max-width: 400px) {
       padding: 0 30px 60px 30px;
     }
-    
+
     h1 {
       color: rgba(100, 76, 92, 1);
       font-size: 38px;
@@ -45,7 +45,7 @@
       width: 100%;
       margin: 90px 0 50px 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         font-size: 36px;
       }
 

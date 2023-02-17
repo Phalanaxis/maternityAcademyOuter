@@ -99,11 +99,12 @@
         <h3 class="project-block__additional-right-title">
           Оставьте заявку, чтобы первыми узнать о старте потока в новом году
         </h3>
-        <div class="project-block__additional-button-container">
-          <div class="project-block__additional-button">
-            Записаться в лист ожидания
-          </div>
-        </div>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSemeWdP_plcFlkOOFZ2NL5hMcyMMN9bWW2pc4OZkgZcLow8pA/viewform?usp=sharing"
+          class="project-block__additional-button-container"
+        >
+          <elements-buttons-secondary title="Записаться в лист ожидания" />
+        </a>
         <svg-plus-icon class="project-block__additional-plus-icon"/>
       </div>
     </div>
@@ -125,7 +126,7 @@
     align-items: center;
     text-align: center;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       padding: 60px 0;
     }
   }
@@ -135,7 +136,7 @@
     font-size: 38px;
     max-width: 500px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       font-size: 36px;
     }
 
@@ -157,7 +158,7 @@
     top: 40px;
     right: 70px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       top: 0;
     }
   }
@@ -169,7 +170,7 @@
     right: -20px;
     transform: scale(1.3) rotate(10deg);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       display: none;
     }
   }
@@ -180,7 +181,7 @@
     line-height: 130%;
     margin: 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       font-size: 36px;
     }
 
@@ -203,7 +204,7 @@
     grid-gap: 40px;
     margin: 50px 0 0 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       grid-template-columns: 1fr;
     }
   }
@@ -236,7 +237,7 @@
     flex-direction: row;
     justify-content: space-between;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       flex-direction: column;
     }
   }
@@ -244,7 +245,7 @@
   &__additional-left-column,
   &__additional-right-column {
     width: calc((100% - 120px)/2);
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       width: 100%;
     }
   }
@@ -253,7 +254,7 @@
     width: 90px;
     height: 90px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       display: none;
     }
   }
@@ -264,7 +265,7 @@
     line-height: 130%;
     margin: 30px 0 0 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       font-size: 30px;
     }
   }
@@ -278,7 +279,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       margin: 30px 0 0 0;
       align-items: center;
     }
@@ -287,7 +288,7 @@
       background-color: transparent;
       padding: 0;
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: flex;
         justify-content: left;
       }
@@ -301,28 +302,14 @@
     max-width: 70%;
     margin: 0;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       max-width: 100%;
     }
   }
 
   &__additional-button-container {
     display: flex;
-    margin: 40px 0 0 0;
-  }
-
-  &__additional-button {
-    padding: 18px 45px;
-    background-color: #FEF8F2;
-    border-radius: 5px;
-    font-size: 18px;
-    color: #644C5C;
-    cursor: pointer;
-    white-space: nowrap;
-
-    @media screen and (max-width: 680px) {
-      font-size: 16px;
-    }
+    text-decoration: none;
   }
 
   &__additional-plus-icon {
@@ -332,7 +319,7 @@
     fill: #C99D7A;
     transform: scale(1.8);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       display: none;
     }
   }
@@ -341,7 +328,7 @@
     display: flex;
     flex-direction: row;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (max-width: 1200px) {
       display: none;
     }
   }
