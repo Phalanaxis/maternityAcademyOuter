@@ -17,6 +17,7 @@ const store = useArticlesStore()
     <template v-if="!store.isFullShow">Показать все</template>
   </elements-button-green>
 </template>
+
 <style lang="scss" scoped>
   h2 {
     font-family: Oswald;
@@ -42,9 +43,9 @@ const store = useArticlesStore()
     width: 100%;
 
     @media screen and (max-width: 1200px) {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
     }
 
     .card {
@@ -58,7 +59,8 @@ const store = useArticlesStore()
       position: relative;
 
       @media screen and (max-width: 1200px) {
-        width: auto;
+        width: 100%;
+        max-width: 100%;
       }
 
       @media screen and (max-width: 680px) {

@@ -1,6 +1,6 @@
 <template>
-  <div class="page__container">
-    <h1>Полезные материалы и статьи</h1>
+  <div class="articles-page section-container">
+    <h1 class="articles-page__title">Полезные материалы и статьи</h1>
       <blocks-articles-cards :data="data.dataCard"/>
       <blocks-media-articles />
       <blocks-slider-articles />
@@ -16,42 +16,22 @@
   const data = useArticlesStore();
 </script>
 <style lang="scss" scoped>
-.page {
 
-  &__container {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     max-width: 1240px;
-     margin: 0 auto;
-     padding: 0 40px 150px 40px;
+.articles-page {
+
+  &__title {
+    color: rgba(100, 76, 92, 1);
+    font-size: 38px;
+    text-align: left;
+    width: 100%;
+    margin: 0 0 50px 0;
 
     @media screen and (max-width: 1200px) {
-      max-width: 720px;
+      font-size: 36px;
     }
 
     @media screen and (max-width: 680px) {
-      padding: 0 20px 120px 20px;
-    }
-
-    @media screen and (max-width: 400px) {
-      padding: 0 30px 60px 30px;
-    }
-
-    h1 {
-      color: rgba(100, 76, 92, 1);
-      font-size: 38px;
-      text-align: left;
-      width: 100%;
-      margin: 90px 0 50px 0;
-
-      @media screen and (max-width: 1200px) {
-        font-size: 36px;
-      }
-
-      @media screen and (max-width: 680px) {
-        font-size: 30px;
-      }
+      font-size: 30px;
     }
   }
 }

@@ -21,6 +21,8 @@
     </div>
   </div>
   <div class="section-block section-container">
-    <blocks-message-us />
+    <blocks-main-useful-articles />
+    <blocks-main-media-articles class="section-block" />
+    <blocks-message-us class="section-block" />
   </div>
 </template>
