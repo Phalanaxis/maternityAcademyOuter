@@ -1,5 +1,5 @@
 <template>
-  <h2 class="heading">Полезные статьи</h2>
+  <h2 class="heading  usefulMedia">Полезные статьи</h2>
   <div class="wrapper">
     <div v-for="(item, index) in store.dataUseful" class="cardArticles">
       <img :src="`/_nuxt/assets/images/articles/imgUseful/${item.img}.png`"/>
@@ -12,6 +12,11 @@
 <script>
   import {useUsefulStore} from '~~/stores/articles/usefulStore';
   export default {
+    data() {
+      return {
+        scrollTo: null
+      }
+    }, 
     setup() {
       const store = useUsefulStore();
 
@@ -19,8 +24,22 @@
         store
       }
     },
+    beforeMount() {
+      if(sessionStorage.getItem('setSroll')) {
+        this.scrollTo = Number(sessionStorage.getItem('setSroll'));
+        sessionStorage.clear()
+      }
+    },
+    mounted () {
+      if (this.scrollTo) {
+        setTimeout(() => {
+          window.scrollTo(0, this.scrollTo)
+        })
+      }
+    },
     methods: {
       goTo(str, index) {
+        sessionStorage.setItem('setSroll', window.scrollY)
         this.store.setIndex(index)
         this.$router.push('/articles/' + str)
       }

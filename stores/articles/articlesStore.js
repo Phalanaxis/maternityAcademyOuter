@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useArticlesStore = defineStore('articlesStore', {
   state: () => ({
+    scroll: null,
     isFullShow: false,
     dataCard: [
       {
@@ -171,8 +172,10 @@ export const useArticlesStore = defineStore('articlesStore', {
   getters: {
     geDataCardMedia() {
       if (!this.isFullShow) {
-        return this.dataCardMedia.filter((el, i) => i < 4)
+        window.scrollTo(0, this.scroll)
+        return this.dataCardMedia.filter((_, i) => i < 4)
       } else {
+        this.scroll = window.scrollY
         return this.dataCardMedia
       }
 

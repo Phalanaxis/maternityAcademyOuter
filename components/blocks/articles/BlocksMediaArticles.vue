@@ -1,7 +1,3 @@
-<script setup>
-import {useArticlesStore} from '~~/stores/articles/articlesStore';
-const store = useArticlesStore()
-</script>
 <template>
   <h2>Статьи в СМИ</h2>
   <div class="wrapper-card">
@@ -17,6 +13,28 @@ const store = useArticlesStore()
     <template v-if="!store.isFullShow">Показать все</template>
   </elements-button-green>
 </template>
+<script>
+  import {useArticlesStore} from '~/stores/articles/articlesStore';
+  export default {
+    data() {
+      return {
+        scrollSava: null
+      }
+    },
+    methods: {
+      saveScroll() {
+        console.log(window)
+      }
+    },
+    setup() {
+      const store = useArticlesStore();
+
+      return {
+        store
+      }
+    }
+  }
+</script>
 <style lang="scss" scoped>
   h2 {
     font-family: Oswald;

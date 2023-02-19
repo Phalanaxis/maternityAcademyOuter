@@ -53,10 +53,10 @@
         <img v-if="index > 0 && width <= 680" :src="`/_nuxt/assets/images/webinars/${index}mob.png`" alt="Вебинар">
       </div>
       <div class="webinars-list__card-wrapper-text">
-        <p>{{ item.howBe }}</p>
+        <p class="who-be">{{ item.whoBe }}</p>
         <h2>{{ item.heading }}</h2>
         <p v-html="item.text" class="how-can-help"></p>
-        <elements-collapse-secondary @click.native="addIndex(index)" class="collapse" title="Подробней" />
+        <button @click.native="addIndex(index)" class="details">Подробнее</button>
         <div class="wraper-price">
           <div>
             <p>СТОИМОСТЬ ПРОГРАММЫ</p>
@@ -109,6 +109,31 @@
       margin-right: 10px;
     }
   }
+
+  .details {
+        width: 100%;
+        margin: 40px 0;
+        border: none;
+        border-top: 1px solid rgba(197, 177, 178, 1);
+        border-bottom: 1px solid rgba(197, 177, 178, 1);
+        padding: 20px 0;
+        color:rgba(120, 53, 62, 1);
+        text-align: left;
+        background-color: transparent;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: Oswald;
+        cursor: pointer;
+
+        @media screen and (max-width: 680px) {
+          margin-bottom: 30px;
+          font-size: 18px;
+        }
+      }
+    
+      .who-be {
+        margin-bottom: 10px;
+      }
 
   .overlay__popup-webinars {
     padding: 60px 74px;
