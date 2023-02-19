@@ -1,5 +1,5 @@
 <script setup>
-  import { useWebinarsStore } from '~~/stores/articles/webinarsStore'
+  import { useWebinarsStore } from '~/stores/webinarsStore'
   const webinars = useWebinarsStore()
 </script>
 <template>
@@ -10,18 +10,24 @@
         <h2>{{ webinars.dataWebinars[item]?.heading }}</h2>
         <p class="for-who">{{ webinars.dataWebinars[item]?.forWhoPopup }}</p>
         <h2>О чем поговорим?</h2>
-        <p class="about-webinars" v-html="webinars.dataWebinars[item]?.aboutWebinarsPopup.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
+        <ul>
+          <li class="about-webinars" v-for="item in webinars.dataWebinars[item]?.aboutWebinarsPopup.split('—').slice(1, -1)">{{ item }}</li>
+        </ul>
       </div>
       <div v-else>
         <h2>{{ webinars.dataWebinars[indexDataForPopup].heading }}</h2>
         <p class="for-who">{{ webinars.dataWebinars[indexDataForPopup].forWhoPopup }}</p>
         <h2>О чем поговорим?</h2>
-        <p class="about-webinars" v-html="webinars.dataWebinars[indexDataForPopup].aboutWebinarsPopup.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
+        <ul>
+          <li class="about-webinars" v-for="item in webinars.dataWebinars[indexDataForPopup].aboutWebinarsPopup.split('—').slice(1, -1)">{{ item }}</li>
+        </ul>
         <div class="mb-60 mt-60" v-if="webinars.dataWebinars[indexDataForPopup].guideNutrition">
           <h2 class="mb-20">Гайд по питанию</h2>
           <p class="mb-40">{{ webinars.dataWebinars[indexDataForPopup].guideNutrition }}</p>
           <h2>О чем поговорим?</h2>
-          <p v-html="webinars.dataWebinars[indexDataForPopup].forWhoPopupNuntrition.split('—').map((el, i) => i !== 0 ? '<br> —' + el : null).join('')"></p>
+          <ul>
+            <li class="about-webinars" v-for="item in webinars.dataWebinars[indexDataForPopup].forWhoPopupNuntrition.split('—').slice(1, -1)">{{ item }}</li>
+          </ul>
         </div>
         <div class="mb-60" v-if="webinars.dataWebinars[indexDataForPopup].booksRecipes">
           <h2 class="mb-40">Книга рецептов</h2>
@@ -192,6 +198,14 @@
       .about-webinars {
         max-width: 579px;
         margin-right: 0;
+        list-style: none;
+
+        &:before {
+            content:  "—";
+            position: relative;
+            left: -5px;
+            bottom: 1px;
+        }
 
         @media screen and (max-width: 680px) {
           font-size: 15px;
