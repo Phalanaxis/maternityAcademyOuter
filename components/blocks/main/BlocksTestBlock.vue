@@ -3,14 +3,30 @@
     <h3 class="test-block__title">
       Ответьте на несколько вопросов, и мы подберем для вас подходящий продукт
     </h3>
-    <elements-buttons-secondary title="Пройти тест" hover-background="#C99D7A" />
+    <elements-buttons-secondary title="Пройти тест" hover-background="#C99D7A" @click="isOpened=true" />
     <svg-star class="test-block__star" />
     <svg-half-circle class="test-block__half-circle" />
     <svg-pine-icon class="test-block__pine-icon" />
     <svg-diamond-icon class="test-block__diamond" />
     <svg-soft-icon class="test-block__soft" />
+    <blocks-test :is-opened="isOpened" @close="isOpened=false" />
   </div>
 </template>
+
+<script>
+import { ref } from 'vue'
+
+  export default {
+
+    setup () {
+      const isOpened = ref(false)
+
+      return {
+        isOpened
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
   .test-block {
@@ -108,7 +124,3 @@
     }
   }
 </style>
-<script setup lang="ts">
-import SvgPineIcon from "~/components/svg/SvgPineIcon.vue";
-import SvgSoftIcon from "~/components/svg/SvgSoftIcon.vue";
-</script>

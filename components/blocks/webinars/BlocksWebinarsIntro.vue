@@ -7,17 +7,33 @@
       Структурированные материалы, которые дадут максимум информации по важным вопросам
     </div>
     <div class="webinars-intro__button-container">
-      <router-link class="webinars-intro__button" to="/webinars#webinarsignIn">
+      <div class="webinars-intro__button" @click="isOpened=true">
         Выбрать вебинар
-      </router-link>
+      </div>
     </div>
     <svg-arrow class="webinars-intro__figures-arrow" />
     <svg-heart-icon class="webinars-intro__heart" />
     <svg-star-nine class="webinars-intro__star-nine" />
     <svg-half-circle class="webinars-intro__half-circle" />
     <svg-pine-icon class="webinars-intro__pine-icon" />
+    <blocks-test :is-opened="isOpened" @close="isOpened=false" />
   </div>
 </template>
+
+<script>
+import { ref } from 'vue'
+
+export default {
+
+  setup () {
+    const isOpened = ref(false)
+
+    return {
+      isOpened
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
   .webinars-intro {

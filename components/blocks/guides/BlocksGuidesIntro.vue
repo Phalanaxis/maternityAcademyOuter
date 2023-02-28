@@ -7,12 +7,28 @@
       Подробные гайды и методички, которые помогут разобраться беременным и мамам в важных вопросах
     </div>
     <div class="guides-intro__button-wrapper">
-      <div class="guides-intro__button">
+      <div class="guides-intro__button" @click="isOpened=true">
         Выбрать материал
       </div>
     </div>
+    <blocks-test :is-opened="isOpened" @close="isOpened=false" />
   </div>
 </template>
+
+<script>
+import { ref } from 'vue'
+
+export default {
+
+  setup () {
+    const isOpened = ref(false)
+
+    return {
+      isOpened
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
   .guides-intro {
